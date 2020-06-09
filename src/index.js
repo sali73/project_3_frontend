@@ -1,5 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import App from "./App";
-import Shop from "./App/shop.js"
-ReactDOM.render(<Shop />, document.getElementById("root"));
+
+import { BrowserRouter } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import App from './App';
+
+const root = document.getElementById("root");
+let hist = createBrowserHistory();
+
+ReactDOM.render((
+    <BrowserRouter history={hist}>
+       <App />
+    </BrowserRouter>
+), root);
