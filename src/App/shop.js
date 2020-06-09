@@ -94,7 +94,7 @@ const Shop = (props) => {
                             <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
                             <img src={product.image} className="card-img-top" alt="..."/>
                             <div className="card-body">
-                              <span style={{marginRight: "20vh", fontSize: "4vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span> 
+                              <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span> 
                               <p className="card-text">{product.description}</p>
                               <a href="#" className="btn btn-primary">Add to Cart</a>
                               <button className="btn btn-dark" onClick={() => {
