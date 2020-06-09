@@ -1,27 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Form from '../Form';
 
 function New () {
-
-    const [name, setName] = useState('')
-
-    function handleSubmit() {
-        console.log('submit')
+    const initialState = {
+        initialName: '',
+        initialDescription: '',
+        initialImage: '',
+        initialPrice: 0,
+        initialQuantity: 0,
     }
 
     return (
-        <div className="New">
-            <form onSumbit={handleSubmit} className="form-group">
-                <label htmlFor="name">Name:</label>
-                <input
-                    type="text"
-                    id="name"
-                    className="form-control"
-                    value={name}
-                    onChange={event => setName(event.target.value)}
-                />
-            </form>
-        </div>
+        <>
+            <h1>Add New Product:</h1>
+            <Form initialState={initialState} />  
+        </>
     )
 }
 
-export default New;
+export default New 
