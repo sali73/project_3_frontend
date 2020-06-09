@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import MainNav from '../MainNav'
-class App extends Component {
+class Contact extends Component {
   render() {
     return (
       <div className="App">
         <MainNav></MainNav>
         <main>
-        Home page
+        Contact
         </main>
         <aside></aside>
       </div>
     )
   }
 }
-export default App;
+export default Contact;

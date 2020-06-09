@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import MainNav from '../MainNav'
-class App extends Component {
+class  Test extends Component {
   render() {
     return (
       <div className="App">
         <MainNav></MainNav>
         <main>
-        Home page
+        <h1>{this.props.match.params.id}</h1>
         </main>
         <aside></aside>
       </div>
     )
   }
 }
-export default App;
+export default Test;
