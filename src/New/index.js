@@ -13,7 +13,7 @@ function New () {
     return (
         <>
             <h1>Add New Product:</h1>
-            <Form initialState={initialState} />  
+            <Form initialState={initialState} callMethod="POST" />  
         </>
     )
 }

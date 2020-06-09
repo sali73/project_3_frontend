@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FormControl({formValue, formHandler,  inputType = "text"}) {
+function FormControl({ formValue, formHandler,  inputType = "text" }) {
     return (
         <>
             <input

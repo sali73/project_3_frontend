@@ -2,7 +2,7 @@ import React from 'react'
 import Form from '../Form';
 
 function Edit () {
-    const initialState = {
+    const initial = {
         initialName: 'test item',
         initialDescription: 'test description',
         initialImage: 'test image',
@@ -12,7 +12,7 @@ function Edit () {
     return (
         <>
             <h1>Update Product:</h1>
-            <Form initialState={initialState} />  
+            <Form initialState={initial} callMethod="PUT" />  
         </>
     )
 }

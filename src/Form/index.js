@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FormControl from '../FormControl'
 
-function Form ({ initialState }) {
+function Form ({ initialState, callMethod }) {
 
     const {
         initialName,
@@ -19,19 +19,23 @@ function Form ({ initialState }) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        const newProduct = {
+        const product = {
             name,
             description,
             image,
             price,
             quantity,
         }
-        const response = await fetch('http://localhost:3001/products', {
-            method: 'POST',
+        let fetchUrl = 'http://localhost:3001/products/';
+        if (callMethod === 'PUT') {
+            fetchUrl += product._id;
+        }
+        const response = await fetch(fetchUrl, {
+            method: callMethod,
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newProduct)
+            body: JSON.stringify(product)
         })
         console.log(response)
     }
