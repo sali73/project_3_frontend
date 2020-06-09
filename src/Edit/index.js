@@ -12,7 +12,7 @@ function Edit () {
     return (
         <>
             <h1>Update Product:</h1>
-            <Form initialState={initialState} />  
+            <Form initialState={initialState} callMethod="PUT" />  
         </>
     )
 }
