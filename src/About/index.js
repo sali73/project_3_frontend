@@ -1,17 +1,17 @@
-
 import React, { Component } from "react";
 import MainNav from '../MainNav'
-class App extends Component {
+// import "./style.scss";
+class About extends Component {
   render() {
     return (
       <div className="App">
         <MainNav></MainNav>
         <main>
-        Home page
+        about page
         </main>
         <aside></aside>
       </div>
     )
   }
 }
-export default App;
+export default About;
