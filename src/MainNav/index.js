@@ -14,17 +14,11 @@ class MainNav extends React.Component {
     render() {
         return (
             <nav>
-                <ul>
-                    {
-                        this.state.routes.map((route)=>{
-                            return(
-                                <li key={route.name}>
-                                    <Link to={route.path}>{route.name}</Link>
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
+                {this.state.routes.map((route)=>{
+                    return(
+                        <Link to={route.path} key={route.name}>{route.name}</Link>
+                    )
+                })}
             </nav>
         )
     }

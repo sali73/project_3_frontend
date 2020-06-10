@@ -1,13 +1,15 @@
 import React from 'react'
 import Form from '../Form';
 
-function Edit () {
+function Edit (props) {
+    const product = props.location.aboutProps; 
+    console.log(product)
     const initial = {
-        initialName: 'test item',
-        initialDescription: 'test description',
-        initialImage: 'test image',
-        initialPrice: 500,
-        initialQuantity: 30,
+        initialName: product.name,
+        initialDescription: product.description,
+        initialImage: product.image,
+        initialPrice: product.price,
+        initialQuantity: product.quantity,
     }
     return (
         <>

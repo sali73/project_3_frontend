@@ -2,28 +2,34 @@ import About from "../About";
 import Contact from "../Contact";
 import New from "../New";
 import Edit from "../Edit";
+import Shop from "../Shop";
 
 const routes = [
     {
-        path:"/contact-us",
+        path:'/contact-us',
         component: Contact,
-        name: "Contact",
+        name: 'Contact',
     },
     {
-        path:"/about",
+        path:'/about',
         component: About,
-        name: "About",
+        name: 'About',
     },
     {
-        path: "/new",
+        path: '/new',
         component: New,
-        name: "New",
+        name: 'New',
     },
     {
-        path: "/edit",
+        path: '/edit/:slug',
         component: Edit,
-        name: "Edit",
+        name: 'Edit',
     },
+    {
+        path: '/shop',
+        component: Shop,
+        name: 'Shop',
+    }
   ]
 
   export { routes };
