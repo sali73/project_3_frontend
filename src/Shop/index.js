@@ -5,21 +5,6 @@ import { Link } from 'react-router-dom';
 const Shop = (props) => {
    
     const [products, setProducts] = React.useState(null);
-    const [editProduct, setEditProduct] = React.useState({
-        name: '',
-        description: '',
-        image: '',
-        price: 0,
-        quantity: 0
-    });
-    
-    const blank = {
-        name: '',
-        description: '',
-        image: '',
-        price: 0,
-        quantity: 0
-    };
 
     //Function to get products from API
     const getInfo = async () => {
@@ -34,39 +19,11 @@ const Shop = (props) => {
         getInfo()
     }, []);
 
-    const handleCreate = async (data) => {
-        const response = await fetch('http://localhost:3001/products', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json' 
-            },
-            body: JSON.stringify(data),
-        });
-        getInfo();
-        console.log(response)
-    };
-
+    // delete function
     const handleDelete = async (id) => {
         const response = await fetch(`http://localhost:3001/products/${id}`, {
             method: 'DELETE',
         });
-        getInfo();
-        console.log(response)
-    };
-  
-    const handleSelect = async (product) => {
-        setEditProduct(product);
-    };
-    const handleEdit = async (data) => {
-        const response = await fetch(
-            `http://localhost:3001/products/${data._id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json'  
-                },
-                body: JSON.stringify(data),
-            }
-        );
         getInfo();
         console.log(response)
     };
@@ -82,7 +39,7 @@ const Shop = (props) => {
            
             <Link to="/new">Add Product</Link>
             {/* <Form initial={blank} handleSubmit={handleCreate} /> */}
-            <h1>Edit Product</h1>
+            {/* <h1>Edit Product</h1> */}
             {/* <Form initial={editProduct} handleSubmit={handleEdit} /> */}
 
             <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
@@ -94,7 +51,7 @@ const Shop = (props) => {
                                 <div className="card-body">
                                     <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
                                     <p className="card-text">{product.description}</p>
-                                    <a href="#" className="btn btn-primary">Add to Cart</a>
+                                    <a href="/shop" className="btn btn-primary">Add to Cart</a>
                                     <button className="btn btn-dark" onClick={() => {handleDelete(product._id)}}>X</button>
                                     <Link to={{
                                         pathname: `/edit/${product._id}`,

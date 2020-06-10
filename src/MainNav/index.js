@@ -13,10 +13,14 @@ class MainNav extends React.Component {
 
     render() {
         return (
-            <nav>
+            <nav className="navbar" style={{inlineSize: '20rem'}}>
                 {this.state.routes.map((route)=>{
                     return(
-                        <Link to={route.path} key={route.name}>{route.name}</Link>
+                        <Link 
+                            to={route.path} 
+                            key={route.name}
+                            className="navbar-nav"
+                        >{route.name}</Link>
                     )
                 })}
             </nav>

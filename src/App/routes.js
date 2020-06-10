@@ -1,7 +1,7 @@
 import About from "../About";
 import Contact from "../Contact";
 import New from "../New";
-import Edit from "../Edit";
+// import Edit from "../Edit";
 import Shop from "../Shop";
 
 const routes = [
@@ -20,11 +20,11 @@ const routes = [
         component: New,
         name: 'New',
     },
-    {
-        path: '/edit/:slug',
-        component: Edit,
-        name: 'Edit',
-    },
+    // {
+    //     path: '/edit/:slug',
+    //     component: Edit,
+    //     name: 'Edit',
+    // },
     {
         path: '/shop',
         component: Shop,
