@@ -9,19 +9,18 @@ class App extends Component {
       <div className="App">
         <MainNav></MainNav>
         <main>
-        <Switch>
-        {routes.map((route)=> {
-            return (
-                <Route 
-                  path={route.path} 
-                  component={route.component}
-                  key={route.name}
-                ></Route>
-            )
-        })}
-      </Switch> 
+          <Switch>
+            {routes.map((route)=> {
+                return (
+                    <Route 
+                      path={route.path} 
+                      component={route.component}
+                      key={route.name}
+                    ></Route>
+                )
+            })}
+          </Switch> 
         </main>
-        <aside></aside>
       </div>
     )
   }
