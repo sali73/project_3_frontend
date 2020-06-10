@@ -2,9 +2,11 @@ import React from 'react'
 import Form from '../Form';
 
 function Edit (props) {
-    const product = props.location.aboutProps; 
-    console.log(product)
-    const initial = {
+
+    const product = props.location.aboutProps;
+    const { _id } = product
+
+    const initialState = {
         initialName: product.name,
         initialDescription: product.description,
         initialImage: product.image,
@@ -14,8 +16,7 @@ function Edit (props) {
     return (
         <>
             <h1>Update Product:</h1>
-            <Form initialState={initial} callMethod="PUT" />  
-
+            <Form initialState={initialState} callMethod="PUT" productId={_id} />  
         </>
     )
 }

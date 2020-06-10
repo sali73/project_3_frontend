@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import FormControl from '../FormControl'
 
-function Form ({ initialState, callMethod }) {
+function Form ({ initialState, callMethod, productId }) {
 
     const {
         initialName,
@@ -28,7 +28,7 @@ function Form ({ initialState, callMethod }) {
         }
         let fetchUrl = 'http://localhost:3001/products/';
         if (callMethod === 'PUT') {
-            fetchUrl += product._id;
+            fetchUrl += productId;
         }
         const response = await fetch(fetchUrl, {
             method: callMethod,
