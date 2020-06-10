@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import MainNav from '../MainNav'
+
 class Contact extends Component {
   render() {
     return (

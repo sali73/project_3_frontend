@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import MainNav from '../MainNav'
-// import "./style.scss";
+
 class About extends Component {
   render() {
     return (

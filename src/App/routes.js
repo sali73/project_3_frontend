@@ -1,7 +1,6 @@
 import About from "../About";
 import Contact from "../Contact";
 import New from "../New";
-// import Edit from "../Edit";
 import Shop from "../Shop";
 import Home from "../Home";
 
@@ -31,12 +30,6 @@ const routes = [
         component: New,
         name: 'New',
     },
-    // {
-    //     path: '/edit/:slug',
-    //     component: Edit,
-    //     name: 'Edit',
-    // },
-
   ]
 
   export { routes };
