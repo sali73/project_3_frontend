@@ -9,6 +9,7 @@ class App extends Component {
     return (
       <div className="App">
         <MainNav></MainNav>
+        
         <main>
           <Switch>
             {routes.map((route)=> {
