@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import MainNav from '../MainNav'
+// import MainNav from '../MainNav'
 class Contact extends Component {
   render() {
     return (
-      <div className="App">
-        <MainNav></MainNav>
+      <div className="Contact">
         <main>
-        Contact
+          Contact page
         </main>
         <aside></aside>
       </div>

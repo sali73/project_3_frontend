@@ -3,17 +3,28 @@ import Contact from "../Contact";
 import New from "../New";
 // import Edit from "../Edit";
 import Shop from "../Shop";
+import Home from "../Home";
 
 const routes = [
     {
-        path:'/contact-us',
-        component: Contact,
-        name: 'Contact',
+        path: '/home',
+        component: Home,
+        name: 'Home',
     },
     {
-        path:'/about',
+        path: '/shop',
+        component: Shop,
+        name: 'Shop',
+    },
+    {
+        path: '/about',
         component: About,
         name: 'About',
+    },
+    {
+        path: '/contact-us',
+        component: Contact,
+        name: 'Contact',
     },
     {
         path: '/new',
@@ -25,11 +36,7 @@ const routes = [
     //     component: Edit,
     //     name: 'Edit',
     // },
-    {
-        path: '/shop',
-        component: Shop,
-        name: 'Shop',
-    }
+
   ]
 
   export { routes };

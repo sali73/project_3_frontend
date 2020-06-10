@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import MainNav from '../MainNav'
+// import MainNav from '../MainNav'
 // import "./style.scss";
 class About extends Component {
   render() {
     return (
-      <div className="App">
-        <MainNav></MainNav>
+      <div className="About">
         <main>
-        about page
+          about page
         </main>
         <aside></aside>
       </div>
