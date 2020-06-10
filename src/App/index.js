@@ -4,6 +4,7 @@ import MainNav from '../MainNav'
 import { routes } from "./routes";
 import Edit from '../Edit'
 import Show from '../Show'
+import Footer from '../Footer'
 
 class App extends Component {
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
             ></Route>
           </Switch> 
         </main>
+        <Footer></Footer>
       </div>
     )
   }
