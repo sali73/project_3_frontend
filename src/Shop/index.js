@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< HEAD
 
+=======
+import MainNav from '../MainNav'
+>>>>>>> b817f359a8e6d442cfef3f54a031e140593eafa3
 // import Form from './form.js'
 const Shop = (props) => {
    
@@ -30,6 +34,10 @@ const Shop = (props) => {
  
     return  (
         <>
+<<<<<<< HEAD
+=======
+            <MainNav></MainNav> 
+>>>>>>> b817f359a8e6d442cfef3f54a031e140593eafa3
             <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(whitesmoke, grey)", color: "whitesmoke", textAlign: "right"} }>
                 <div className="container">
                     <h1 className="display-4">App Name</h1>
@@ -47,6 +55,7 @@ const Shop = (props) => {
                     ? products.map((product) => {
                           return (
                             <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
+<<<<<<< HEAD
                                  <Link to={{
                                         pathname: `/show/${product._id}`,
                                         aboutProps: {
@@ -55,6 +64,9 @@ const Shop = (props) => {
                                     }}>
                                         <img src={product.image} className="card-img-top" alt="..." /></Link>
                                 
+=======
+                                <img src={product.image} className="card-img-top" alt="..." />
+>>>>>>> b817f359a8e6d442cfef3f54a031e140593eafa3
                                 <div className="card-body">
                                     <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
                                     <p className="card-text">{product.description}</p>
