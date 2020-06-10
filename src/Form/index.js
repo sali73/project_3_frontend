@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import FormControl from '../FormControl'
+import { Redirect } from 'react-router';
 
 function Form ({ initialState, callMethod, productId }) {
 
@@ -16,6 +17,7 @@ function Form ({ initialState, callMethod, productId }) {
     const [image, setImage] = useState(initialImage);
     const [price, setPrice] = useState(initialPrice);
     const [quantity, setQuantity] = useState(initialQuantity);
+    const [isRedirect, setIsRedirect] = useState(false);
 
     async function handleSubmit(event) {
         event.preventDefault();
@@ -38,6 +40,7 @@ function Form ({ initialState, callMethod, productId }) {
             body: JSON.stringify(product)
         })
         console.log(response)
+        setIsRedirect(true);
     }
 
     return (
@@ -55,6 +58,7 @@ function Form ({ initialState, callMethod, productId }) {
                 <FormControl formValue={quantity} formHandler={setQuantity} inputType="number" />
                 <button className="btn btn-primary">Submit</button>
             </form>
+            {isRedirect ? <Redirect to="/shop" /> : ''}
         </div>
     )
 }

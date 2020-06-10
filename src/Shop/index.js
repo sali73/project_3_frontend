@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { routes } from '../App/routes';
 
 // import Form from './form.js'
 const Shop = (props) => {
@@ -34,7 +33,6 @@ const Shop = (props) => {
     React.useEffect(()=>{
         getInfo()
     }, []);
-
 
     const handleCreate = async (data) => {
         const response = await fetch('http://localhost:3001/products', {
