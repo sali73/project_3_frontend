@@ -1,10 +1,15 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import UserContext from '../App/UserContext.js';
+import axios from 'axios';
+import { Redirect } from 'react-router';
 
 function Login() {
 
     // state
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const { setUserData } = useContext(UserContext);
 
     // login
     async function handleLogin(event) {
@@ -13,15 +18,16 @@ function Login() {
             username,
             password,
         }
-        console.log(user)
-        const response = await fetch('http://localhost:3001/auth/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-        console.log(response);
+        const response = await axios.post(
+            'http://localhost:3001/auth/',
+            user
+        )
+        setUserData({
+            token: response.data.token,
+            user: response.data.user,
+        });
+        localStorage.setItem('auth-token', response.data.token);
+        setIsLoggedIn(true);
     }
 
     return (
@@ -47,6 +53,7 @@ function Login() {
                 />
                 <button className="btn btn-success">Login</button>
             </form>
+            {isLoggedIn ? <Redirect to='/shop' /> : ''}
         </div>
     )
 }
