@@ -27,21 +27,6 @@ const routes = [
         component: Contact,
         name: 'Contact',
     },
-    {
-        path: '/new',
-        component: New,
-        name: 'New',
-    },
-    {
-        path: '/login',
-        component: Login,
-        name: 'Login',
-    },
-    {
-        path: '/signup',
-        component: Register,
-        name: 'Sign Up',
-    },
   ]
 
   export { routes };

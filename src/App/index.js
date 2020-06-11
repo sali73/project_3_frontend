@@ -4,10 +4,13 @@ import axios from 'axios';
 import MainNav from '../MainNav';
 import { routes } from "./routes";
 import UserContext from './UserContext'
-import Edit from '../Edit'
-import Show from '../Show'
-import Footer from '../Footer'
+import Edit from '../Edit';
+import New from '../New';
+import Show from '../Show';
+import Footer from '../Footer';
 import AuthNav from '../AuthNav';
+import Register from '../Register';
+import Login from '../Login';
 
 function App () {
   // set initial user state
@@ -17,10 +20,8 @@ function App () {
   });
   // check for login and handle jwt auth
   useEffect(() => {
-    console.log('render')
     const checkLoggedIn = async () => {
       let token = localStorage.getItem('auth-token');
-      console.log(token)
       if (token === null) {
         localStorage.setItem('auth-token', '');
         token = '';
@@ -46,8 +47,10 @@ function App () {
   return (
     <div className="App">
       <UserContext.Provider value={{userData, setUserData}}>
-        <MainNav />
-        <AuthNav />
+        <div className="container-fluid justify-content-between" style={{display: 'inline-flex'}}>
+          <MainNav />
+          <AuthNav />
+        </div>
         <main>
           <Switch>
             {routes.map((route)=> {
@@ -59,6 +62,18 @@ function App () {
                     ></Route>
                 )
             })}
+            <Route
+              path="/signup"
+              component={Register}
+            ></Route>
+            <Route
+              path="/login"
+              component={Login}
+            ></Route>
+            <Route
+              path="/new"
+              component={New}
+            ></Route>
             <Route
               path="/edit/:slug"
               component={Edit}

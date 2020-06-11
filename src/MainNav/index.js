@@ -13,7 +13,7 @@ class MainNav extends React.Component {
 
     render() {
         return (
-            <nav className="navbar" style={{inlineSize: '24rem'}}>
+            <nav className="navbar" style={{inlineSize: '16rem'}}>
                 {this.state.routes.map((route)=>{
                     return(
                         <Link 
