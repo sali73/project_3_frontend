@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import UserContext from '../App/UserContext';
 
 function AuthNav() {
-    
     const { userData } = useContext(UserContext);
-    console.log(userData)
+    // console.log(userData)
     let username = ''
     if (userData.user) {
         username = userData.user.username;

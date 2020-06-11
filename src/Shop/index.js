@@ -9,7 +9,7 @@ const Shop = (props) => {
     const getInfo = async () => {
         const response = await fetch('http://localhost:3001/products');
         const result = await response.json();
-        console.log(result);
+        console.log('products:', result);
         setProducts(result);
     };
     

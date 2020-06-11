@@ -10,7 +10,6 @@ import Footer from '../Footer'
 import AuthNav from '../AuthNav';
 
 function App () {
-
   // set initial user state
   const [userData, setUserData] = useState({
     token: undefined,
@@ -18,8 +17,10 @@ function App () {
   });
   // check for login and handle jwt auth
   useEffect(() => {
+    console.log('render')
     const checkLoggedIn = async () => {
       let token = localStorage.getItem('auth-token');
+      console.log(token)
       if (token === null) {
         localStorage.setItem('auth-token', '');
         token = '';
@@ -27,11 +28,11 @@ function App () {
       const tokenRes = await axios.post(
         'http://localhost:3001/auth/validateToken',
         null,
-        { headers: { 'x-auth-token': token },
-      });
+        { headers: { 'x-auth-token': token }},
+      );
       if (tokenRes.data) {
         const userRes = await axios.get(
-          'http://localhost:3001/auth/', 
+          'http://localhost:3001/auth/',
           { headers: { 'x-auth-token': token },
         })
         setUserData({
@@ -42,7 +43,6 @@ function App () {
     }
     checkLoggedIn();
   }, []);
-
   return (
     <div className="App">
       <UserContext.Provider value={{userData, setUserData}}>

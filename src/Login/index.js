@@ -20,7 +20,7 @@ function Login() {
             'http://localhost:3001/auth/',
             user
         )
-        console.log(response)
+        // console.log('login response:', response)
         setUserData({
             token: response.data.token,
             user: response.data.user,
