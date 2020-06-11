@@ -13,7 +13,7 @@ function Show(props) {
             <h5>Q:{product.quantity}</h5>
             <button>ADD TO CART</button>
 
-            <h5>Product Details:<h6>{product.description}</h6></h5>
+            <h5>Product Details:<p>{product.description}</p></h5>
             
             </div>  
             
