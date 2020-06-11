@@ -6,7 +6,7 @@ function Show(props) {
         <>
             <div className='jumbotron-fluid ' style={{textAlign:'center'}}>
             {/* <h1>Show Product:</h1> */}
-            <div><h2 style={{}}>{product.name}</h2></div>
+            <div><h2>{product.name}</h2></div>
             <img src={product.image} alt="..." style={{width:'350px'}}/>
             <h4>${product.price}</h4>
             <h5>Q:{product.quantity}</h5>
