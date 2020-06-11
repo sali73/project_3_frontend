@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import UserContext from '../App/UserContext.js';
+import axios from 'axios';
 
 function Login() {
 
     // state
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const { setUserData } = useContext(UserContext);
 
     // login
     async function handleLogin(event) {
@@ -13,15 +16,17 @@ function Login() {
             username,
             password,
         }
-        console.log(user)
-        const response = await fetch('http://localhost:3001/auth/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-        console.log(response);
+        const response = await axios.post(
+            'http://localhost:3001/auth/',
+            user
+        )
+        console.log(response)
+        setUserData({
+            token: response.data.token,
+            user: response.data.user,
+        });
+        localStorage.setItem('auth-token', response.data.token);
+        // console.log(response);
     }
 
     return (
