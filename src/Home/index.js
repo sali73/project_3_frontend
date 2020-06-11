@@ -1,10 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+
 function Home () {
     return (
         <>
-    
+        <head>
         <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"></link>
+        </head>
         {/* <div style={{display:"flex", justifyContent:"space-around"}}>
         <div class="jumbotron" style={{backgroundImage:"url('https://trello-attachments.s3.amazonaws.com/5ee19ed8ed7850157b41932f/1000x667/6ae3e0ece0053aeb7f79bcfef49f7645/33.jpg')", height:"60vh" ,width:"120vh", textAlign:"end", fontWeight:"bolder", backgroundRepeat:"no-repeat",backgroundPosition:"center", color:"lightgrey", backgroundSize:"cover"}}>
         <h1 class="display-4" style={{fontSize:"10vh", fontFamily:"Abril Fatface"}}>App Name</h1>
@@ -56,6 +58,7 @@ function Home () {
                     </a>
                     </div>
                     </div>
+                    
         </>
     )
 }
