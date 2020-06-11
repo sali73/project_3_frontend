@@ -3,6 +3,7 @@ import Contact from "../Contact";
 import New from "../New";
 import Shop from "../Shop";
 import Home from "../Home";
+import Login from "../Login";
 
 const routes = [
     {
@@ -29,6 +30,11 @@ const routes = [
         path: '/new',
         component: New,
         name: 'New',
+    },
+    {
+        path: '/login',
+        component: Login,
+        name: 'Login',
     },
   ]
 
