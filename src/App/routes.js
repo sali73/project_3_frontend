@@ -4,6 +4,7 @@ import New from "../New";
 import Shop from "../Shop";
 import Home from "../Home";
 import Login from "../Login";
+import Register from '../Register';
 
 const routes = [
     {
@@ -35,6 +36,11 @@ const routes = [
         path: '/login',
         component: Login,
         name: 'Login',
+    },
+    {
+        path: '/signup',
+        component: Register,
+        name: 'Sign Up',
     },
   ]
 
