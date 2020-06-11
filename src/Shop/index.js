@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 // import Form from './form.js'
 const Shop = (props) => {
    
@@ -45,14 +44,14 @@ const Shop = (props) => {
             <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
                 {products
                     ? products.map((product) => {
-                        return (
-                            <Link to={{
-                                pathname: `/shop/${product._id}`,
-                                aboutProps: {
-                                    ...product
-                                }
-                            }}>
-                                <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
+                          return (
+                            <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
+                                <Link to={{
+                                    pathname: `/show/${product._id}`,
+                                    aboutProps: {
+                                        ...product
+                                    }
+                                }}>
                                     <img src={product.image} className="card-img-top" alt="..." />
                                     <div className="card-body">
                                         <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
@@ -66,8 +65,8 @@ const Shop = (props) => {
                                             }
                                         }}>Edit</Link>
                                     </div>
-                                </div>
-                            </Link>
+                                </Link>
+                            </div>
                         );
                     })
                     : 'LOADING...'}
