@@ -1,4 +1,5 @@
 import React from 'react'
+
 function Show(props) {
     const product = props.location.aboutProps;
     console.log(props.location)
@@ -12,7 +13,7 @@ function Show(props) {
             <h5>Q:{product.quantity}</h5>
             <button type="button" class="btn btn-secondary btn-sm">ADD TO CART</button>
 
-            <h5>Product Details:<h6>{product.description}</h6></h5>
+            <h5>Product Details:<p>{product.description}</p></h5>
             
             </div>  
             
