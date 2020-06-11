@@ -1,16 +1,22 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { Route, Switch } from 'react-router-dom';
 import MainNav from '../MainNav';
 import { routes } from "./routes";
-
+import UserContext from './UserContext'
 import Edit from '../Edit'
 import Show from '../Show'
 import Footer from '../Footer'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
+function App () {
+
+  const [userData, setUserData] = useState({
+    token: undefined,
+    user: undefined,
+  })
+
+  return (
+    <div className="App">
+      <UserContext.Provider value={{userData, setUserData}}>
         <MainNav />
         <main>
           <Switch>
@@ -27,15 +33,16 @@ class App extends Component {
               path="/edit/:slug"
               component={Edit}
             ></Route>
-             <Route
+              <Route
               path="/show/:slug"
               component={Show}
             ></Route>
           </Switch> 
         </main>
         <Footer />
-      </div>
-    )
-  }
+      </UserContext.Provider>
+    </div>
+  )
 }
+
 export default App;
