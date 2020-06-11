@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import Form from './form.js'
 const Shop = (props) => {
-   
+  
     const [products, setProducts] = React.useState(null);
 
     //Function to get products from API
@@ -26,7 +26,8 @@ const Shop = (props) => {
         getInfo();
         console.log(response)
     };
- 
+    
+     
     return  (
         <>
             <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(whitesmoke, grey)", color: "whitesmoke", textAlign: "right"} }>
@@ -37,11 +38,8 @@ const Shop = (props) => {
             </div>
            
             <Link to="/new">Add Product</Link>
-            {/* <Form initial={blank} handleSubmit={handleCreate} /> */}
-            {/* <h1>Edit Product</h1> */}
-            {/* <Form initial={editProduct} handleSubmit={handleEdit} /> */}
-
-            <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
+            
+            <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
                 {products
                     ? products.map((product) => {
                           return (
