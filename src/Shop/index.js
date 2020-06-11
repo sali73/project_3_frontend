@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import Form from './form.js'
+import AddToCart from '../AddToCart';
+
 const Shop = (props) => {
   
     const [products, setProducts] = React.useState(null);
@@ -55,7 +56,7 @@ const Shop = (props) => {
                                 <div className="card-body">
                                     <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
                                     <p className="card-text">{product.description}</p>
-                                    <Link to="/shop" className="btn btn-primary">Add to Cart</Link>
+                                    <AddToCart product={product}>Add to Cart</AddToCart>
                                     <button className="btn btn-dark" onClick={() => {handleDelete(product._id)}}>X</button>
                                     <Link to={{
                                         pathname: `/edit/${product._id}`,

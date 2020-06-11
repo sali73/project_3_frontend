@@ -17,6 +17,7 @@ function App () {
   const [userData, setUserData] = useState({
     token: undefined,
     user: undefined,
+    cart: undefined,
   });
   // check for login and handle jwt auth
   useEffect(() => {

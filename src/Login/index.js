@@ -1,12 +1,14 @@
 import React, { useState, useContext } from 'react'
 import UserContext from '../App/UserContext.js';
 import axios from 'axios';
+import { Redirect } from 'react-router';
 
 function Login() {
 
     // state
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { setUserData } = useContext(UserContext);
 
     // login
@@ -20,13 +22,12 @@ function Login() {
             'http://localhost:3001/auth/',
             user
         )
-        // console.log('login response:', response)
         setUserData({
             token: response.data.token,
             user: response.data.user,
         });
         localStorage.setItem('auth-token', response.data.token);
-        // console.log(response);
+        setIsLoggedIn(true);
     }
 
     return (
@@ -52,6 +53,7 @@ function Login() {
                 />
                 <button className="btn btn-success">Login</button>
             </form>
+            {isLoggedIn ? <Redirect to='/shop' /> : ''}
         </div>
     )
 }
