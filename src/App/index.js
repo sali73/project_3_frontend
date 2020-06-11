@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import { Route, Switch } from 'react-router-dom';
 import MainNav from '../MainNav';
 import { routes } from "./routes";
-import Edit from '../Edit';
-import Show from '../Show';
+
+import Edit from '../Edit'
+import Show from '../Show'
+import Footer from '../Footer'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <MainNav></MainNav>
+        <MainNav />
         <main>
           <Switch>
             {routes.map((route)=> {
@@ -25,12 +27,13 @@ class App extends Component {
               path="/edit/:slug"
               component={Edit}
             ></Route>
-            <Route
-              path="product/:slug"
+             <Route
+              path="/show/:slug"
               component={Show}
             ></Route>
           </Switch> 
         </main>
+        <Footer></Footer>
       </div>
     )
   }
