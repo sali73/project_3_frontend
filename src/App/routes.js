@@ -5,7 +5,7 @@ import Shop from "../Shop";
 import Home from "../Home";
 import Login from "../Login";
 import Register from '../Register';
-
+import Cart from '../Cart';
 const routes = [
     {
         path: '/home',
@@ -41,6 +41,11 @@ const routes = [
         path: '/signup',
         component: Register,
         name: 'Sign Up',
+    },
+    {
+        path: '/signup',
+        component: Cart,
+        name: 'Cart',
     },
   ]
 
