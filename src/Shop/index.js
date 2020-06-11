@@ -45,25 +45,31 @@ const Shop = (props) => {
             <div style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
                 {products
                     ? products.map((product) => {
-                          return (
-                            <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
-                                <img src={product.image} className="card-img-top" alt="..." />
-                                <div className="card-body">
-                                    <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
-                                    <p className="card-text">{product.description}</p>
-                                    <a href="/shop" className="btn btn-primary">Add to Cart</a>
-                                    <button className="btn btn-dark" onClick={() => {handleDelete(product._id)}}>X</button>
-                                    <Link to={{
-                                        pathname: `/edit/${product._id}`,
-                                        aboutProps: {
-                                            ...product
-                                        }
-                                    }}>Edit</Link>
+                        return (
+                            <Link to={{
+                                pathname: `/shop/${product._id}`,
+                                aboutProps: {
+                                    ...product
+                                }
+                            }}>
+                                <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
+                                    <img src={product.image} className="card-img-top" alt="..." />
+                                    <div className="card-body">
+                                        <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
+                                        <p className="card-text">{product.description}</p>
+                                        <a href="/shop" className="btn btn-primary">Add to Cart</a>
+                                        <button className="btn btn-dark" onClick={() => {handleDelete(product._id)}}>X</button>
+                                        <Link to={{
+                                            pathname: `/edit/${product._id}`,
+                                            aboutProps: {
+                                                ...product
+                                            }
+                                        }}>Edit</Link>
+                                    </div>
                                 </div>
-                            </div>
-                             
-                          );
-                      })
+                            </Link>
+                        );
+                    })
                     : 'LOADING...'}
             </div>
         </>

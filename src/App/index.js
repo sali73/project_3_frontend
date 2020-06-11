@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Route, Switch } from 'react-router-dom';
-import MainNav from '../MainNav'
+import MainNav from '../MainNav';
 import { routes } from "./routes";
-import Edit from '../Edit'
+import Edit from '../Edit';
+import Show from '../Show';
 
 class App extends Component {
   render() {
@@ -23,6 +24,10 @@ class App extends Component {
             <Route
               path="/edit/:slug"
               component={Edit}
+            ></Route>
+            <Route
+              path="product/:slug"
+              component={Show}
             ></Route>
           </Switch> 
         </main>
