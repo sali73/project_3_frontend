@@ -1,25 +1,28 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import UserContext from '../App/UserContext';
+import Axios from 'axios';
 
 function AuthNav({ cartSize, setCartSize }) {
 
     const { userData, setUserData } = useContext(UserContext);
     const [username, setUsername] = useState('');
 
-    async function getData() {
-        if (userData.user) {
-            const loggedInUser = await userData.user.username;
-            const cart = await userData.user.cart;
-            setUsername(loggedInUser)
-            console.log(cart.length)
-            setCartSize(cart.length)
-        }
-    }
-
     useEffect(() => {
+        const getData = async () => {
+
+            if (userData.user) {
+                const userId = userData.user._id;
+                const loggedInUser = userData.user.username;
+                const cart = await Axios.get(
+                    `http://localhost:3001/users/cart/${userId}`
+                )
+                setUsername(loggedInUser)
+                setCartSize(cart.data.length)
+            }
+        }
         getData()
-    })
+    }, [userData, setCartSize])
 
     function handleLogout() {
         setUserData({
@@ -46,9 +49,9 @@ function AuthNav({ cartSize, setCartSize }) {
                 </>
                 )}
             {cartSize > 0 ?
-                <span className="btn btn-info">Cart: {cartSize}</span>
+                <Link to="/cart" className="btn btn-info">Cart: {cartSize}</Link>
                 : ''
-            }           
+            }
         </span>
     )
 }

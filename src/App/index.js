@@ -12,6 +12,7 @@ import AuthNav from '../AuthNav';
 import Register from '../Register';
 import Login from '../Login';
 import Shop from '../Shop';
+import Cart from '../Cart';
 
 function App () {
   // set initial user state
@@ -87,9 +88,13 @@ function App () {
               path="/edit/:slug"
               component={Edit}
             ></Route>
-              <Route
+            <Route
               path="/show/:slug"
               component={Show}
+            ></Route>
+            <Route
+              path="/cart"
+              render={(userData) => <Cart {...userData} />}
             ></Route>
           </Switch> 
         </main>
