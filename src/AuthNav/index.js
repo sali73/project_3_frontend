@@ -8,20 +8,19 @@ function AuthNav({ cartSize, setCartSize }) {
     const { userData, setUserData } = useContext(UserContext);
     const [username, setUsername] = useState('');
 
+    const getData = async () => {
+        const userId = userData.user._id;
+        const loggedInUser = userData.user.username;
+        const cart = await Axios.get(
+            `http://localhost:3001/users/cart/${userId}`
+        )
+        setUsername(loggedInUser)
+        setCartSize(cart.data.length)
+    }
+
     useEffect(() => {
-        const getData = async () => {
-            if (userData.user) {
-                const userId = userData.user._id;
-                const loggedInUser = userData.user.username;
-                const cart = await Axios.get(
-                    `http://localhost:3001/users/cart/${userId}`
-                )
-                setUsername(loggedInUser)
-                setCartSize(cart.data.length)
-            }
-        }
         getData()
-    }, [userData, setCartSize])
+    }, [userData.user.cart])
 
     function handleLogout() {
         setUserData({
@@ -47,10 +46,7 @@ function AuthNav({ cartSize, setCartSize }) {
                     <Link to="/signup" className="btn btn-primary">Sign Up</Link>    
                 </>
                 )}
-            {cartSize > 0 ?
                 <Link to="/cart" className="btn btn-info">Cart</Link>
-                : ''
-            }
         </span>
     )
 }
