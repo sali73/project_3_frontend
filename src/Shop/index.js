@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import AddToCart from '../AddToCart';
 
 const Shop = (props) => {
-  
     const [products, setProducts] = React.useState(null);
-
+        
+    
     //Function to get products from API
     const getInfo = async () => {
         const response = await fetch('http://localhost:3001/products');
@@ -31,18 +31,41 @@ const Shop = (props) => {
      
     return  (
         <>
-            <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(whitesmoke, grey)", color: "whitesmoke", textAlign: "right"} }>
-                <div className="container">
-                    <h1 className="display-4">App Name</h1>
-                    <p className="lead">Some small description of app goes here</p>
-                </div>
+        <head>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Prata&display=swap" rel="stylesheet"/>
+        </head>
+            <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(white, grey)", color: "whitesmoke", textAlign: "right", margin:"0", height:"25vh"} }>
+            <div className="container">
+                 <h1 className="display-4" style={{fontSize:"10vh", fontFamily:"prata"}}>CES</h1>
+                 <p className="lead" style={{fontSize:"3vh", fontFamily: 'Barlow Semi Condensed'}}>Shop our latest styles of designer handbags</p>
             </div>
+         </div>
            
-            <Link to="/new">Add Product</Link>
-            
+            <Link style={{paddingLeft:"2vh"}}to="/new">Add Product</Link>
+            {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
+            <div className="filters-content" style={{display:"flex", flexDirection:"row"}}>
+            <div className="filters" style={{width:"20%", paddingLeft:"2vh"}}>
+                <h4 style={{borderTop:"solid grey"}}>Filter by Color</h4>
+                <label for="red"> Red</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="red"  value="color"/><br />
+                <label for="tan"> Tan</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tan"  value="color"/><br />
+                <label for="black"> Black</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="black"  value="color" /><br />
+                <h4 style={{borderTop:"solid grey"}}>Filter by Name</h4>
+                <label for="tote"> Tote</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br />
+                <label for="purse"> Purse</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/><br />
+                <label for="shopping bag">Shopping Bag</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/><br />
+                
+            </div>
             <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
+                
                 {products
                     ? products.map((product) => {
+                        
                           return (
                             <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
                                 <Link to={{
@@ -69,7 +92,10 @@ const Shop = (props) => {
                         );
                     })
                     : 'LOADING...'}
+                    
             </div>
+            </div>
+            
         </>
     )
 };
