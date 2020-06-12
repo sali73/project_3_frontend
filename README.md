@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project 3 - CES Shopping App
 
-## Available Scripts
+**link to deployed app**
 
-In the project directory, you can run:
+link here
 
-### `yarn start`
+**Technologies Used**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Organizational/Communication Tools Used**
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+On day one our group decided to spend some time and research tools to help our team's overall communication and organization. We found that Trello would be the best fit for dividing up tasks and tracking our progress. We also decided that holding 15-30 min stand meetings at the start of each day to go over what we have accomplished, what needs to be done, and who is doing what, would be the best way to have everyone up to speed on our app. Lastly, we stayed active on Slack for any questions or suggestions we had for eachother.
+![Trello dashboard](https://files.slack.com/files-pri/T0351JZQ0-F015BSAHDU3/image.png)
 
-### `yarn test`
+**Wireframes**
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Wireframes for show and shop pages made in google docs
+![Shop wireframe](https://files.slack.com/files-pri/T0351JZQ0-F0154RXC5B8/image.png)
 
-### `yarn build`
+![Show wireframe](https://files.slack.com/files-pri/T0351JZQ0-F015A6XS9EZ/image.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**User Stories**
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+*User is initially brought to the Home page where they can view a carousel of latest products as well as a link to Shop, a navigation bar that includes links for 'Home', 'Shop', 'About', 'Contact Us', as well as user login and and signup options.
+*User is able to acess all visible links in navigation bar without being authenticated. They may also view individual item's show pages.
+*When the user visits the Shop page they can see all items for sale, with information on each item that includes the name, price, and a short description of the item.
+*When a user clicks "Add to Cart" the selceted item will be added to the cart which is visible by clicking on the Cart link in the top right corner of the page.
+*When the user is veiwing their items in the cart, they are able to remove unwanted items from cart.
+*If a user is authenticated as an admin they will have access to edit, delete and create new items on the Shop page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+**Struggles**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+We planned to have a filter component that would allow users to filter the products that are displayed based on color, name, price etc. However we could not get the filters to work properly and decided as a team to leave it out and come back to later in the course.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Notes for Adding to the Project Later**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+*Incoporate filters for user to use on Shop page.
+*Add top three relevent items below selected item on show page.
+*Ability for user to edit quantity of items in shopping cart.
+*Adjust styling for mobile use.
