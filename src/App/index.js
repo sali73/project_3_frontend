@@ -11,14 +11,18 @@ import Footer from '../Footer';
 import AuthNav from '../AuthNav';
 import Register from '../Register';
 import Login from '../Login';
+import Shop from '../Shop';
+import Cart from '../Cart';
 
 function App () {
   // set initial user state
   const [userData, setUserData] = useState({
-    token: undefined,
-    user: undefined,
-    cart: undefined,
+    token: '',
+    user: '',
+    cart: [],
   });
+  const [cartSize, setCartSize] = useState(0);
+
   // check for login and handle jwt auth
   useEffect(() => {
     const checkLoggedIn = async () => {
@@ -45,24 +49,29 @@ function App () {
     }
     checkLoggedIn();
   }, []);
+
   return (
     <div className="App">
       <UserContext.Provider value={{userData, setUserData}}>
         <div className="container-fluid justify-content-between" style={{display: 'inline-flex'}}>
           <MainNav />
-          <AuthNav />
+          <AuthNav cartSize={cartSize} setCartSize={setCartSize} />
         </div>
         <main>
           <Switch>
             {routes.map((route)=> {
-                return (
-                    <Route
+              return (
+                <Route
                       path={route.path} 
                       component={route.component}
                       key={route.name}
-                    ></Route>
+                ></Route>
                 )
             })}
+            <Route
+              path="/shop"
+              render={(cartSize, setCartSize) => <Shop cartSize={cartSize} setCartSize={setCartSize} />}
+            ></Route>
             <Route
               path="/signup"
               component={Register}
@@ -79,9 +88,13 @@ function App () {
               path="/edit/:slug"
               component={Edit}
             ></Route>
-              <Route
+            <Route
               path="/show/:slug"
               component={Show}
+            ></Route>
+            <Route
+              path="/cart"
+              render={(userData) => <Cart {...userData} />}
             ></Route>
           </Switch> 
         </main>

@@ -3,6 +3,8 @@ import React from 'react'
 // import'bootstrap-css-only/css/bootstrap.min.css'; 
 // import'mdbreact/dist/css/mdb.css';
 
+import AddToCart from '../AddToCart';
+
 function Show(props) {
     const product = props.location.aboutProps;
     console.log(props.location)
@@ -11,7 +13,6 @@ function Show(props) {
            <head>
            <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"></link>
            </head>
-
             <div className='jumbotron-fluid ' style={{textAlign:'center',fontFamily:"Abril Fatface"}}>
                 <div style={{display:'flex' , paddingTop:"5vh" , justifyContent:'center' }}>   
                     <div className="view overlay zoom">

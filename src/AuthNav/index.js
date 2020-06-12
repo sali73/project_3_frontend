@@ -1,19 +1,26 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import UserContext from '../App/UserContext';
+import Axios from 'axios';
 
-function AuthNav() {
+function AuthNav({ cartSize, setCartSize }) {
+
     const { userData, setUserData } = useContext(UserContext);
-    console.log(userData)
     const [username, setUsername] = useState('');
-    const [cartSize, setCartSize] = useState(0);
+
+    const getData = async () => {
+        const userId = userData.user._id;
+        const loggedInUser = userData.user.username;
+        const cart = await Axios.get(
+            `http://localhost:3001/users/cart/${userId}`
+        )
+        setUsername(loggedInUser)
+        setCartSize(cart.data.length)
+    }
 
     useEffect(() => {
-        if (userData.user) {
-            setUsername(userData.user.username)
-            setCartSize(userData.user.cart.length)
-        }
-    }, [userData.user])
+        getData()
+    }, [userData.user.cart])
 
     function handleLogout() {
         setUserData({
@@ -22,7 +29,10 @@ function AuthNav() {
             cart: undefined,
         })
         localStorage.setItem('auth-token', '');
+        setUsername('')
+        setCartSize(0)
     }
+
     return (
         <span className="AuthNav">
             {username ?
@@ -36,10 +46,7 @@ function AuthNav() {
                     <Link to="/signup" className="btn btn-primary">Sign Up</Link>    
                 </>
                 )}
-            {cartSize > 0 ?
-                <span className="btn btn-info">Cart: {cartSize}</span>
-                : ''
-            }           
+                <Link to="/cart" className="btn btn-info">Cart</Link>
         </span>
     )
 }
