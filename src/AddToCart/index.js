@@ -2,9 +2,9 @@ import React, { useContext } from 'react'
 import UserContext from '../App/UserContext';
 import axios from 'axios';
 
-function AddToCart(props) {
+function AddToCart({ product }) {
 
-    const { userData } = useContext(UserContext);
+    const { userData, setUserData } = useContext(UserContext);
 
     async function handleAddToCart() {
         if (userData.user) {
@@ -13,20 +13,22 @@ function AddToCart(props) {
                 'http://localhost:3001/users/addToCart',
                 {
                     userId,
-                    product: props.product,
+                    product: product,
                 },
             )
-            console.log(response)
+            console.log(response);
+            setUserData(userData);
         }
+
     }
     
     return (
-        <div 
-            className="AddToCart btn btn-primary"
+        <button
             onClick={handleAddToCart}
+            className="AddToCart btn btn-primary"
         >
-            {props.children}
-        </div>
+            Add to Cart
+        </button>
     )
 }
 
