@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Cart(props) {
 
-    const { userData } = useContext(UserContext);
+    const { userData, setUserData } = useContext(UserContext);
  
     const [cart, setCart] = useState([]);
     const userId = userData.user._id
@@ -37,8 +37,10 @@ function Cart(props) {
 
     
     // delete function
-    function handleDelete(id) {
-        
+    async function handleDelete(id) {
+        const response = await axios.delete(`http://localhost:3001/users/${userId}/${id}`)
+        setCart(response.data)
+        setUserData(userData)
     };
     
 
@@ -52,7 +54,9 @@ function Cart(props) {
                         <img src={product.image} alt={product.name} style={{inlineSize: '8rem'}} />
                         <h3>{product.name}</h3>
                         <h5>${product.price}</h5>
-                        <button onClick={() => handleDelete(product._id)}>Remove from Cart</button>
+                        <form onSubmit={() => handleDelete(product._id)}>
+                            <button>Remove from Cart</button>
+                        </form>
                     </div>
                 )
             })}
