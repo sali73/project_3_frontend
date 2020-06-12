@@ -23,13 +23,12 @@ function AddToCart({ product }) {
     }
     
     return (
-        <form onSubmit={handleAddToCart}>
-            <button
-                className="AddToCart btn btn-primary"
-            >
-                Add to Cart
-            </button>
-        </form>
+        <button
+            onClick={handleAddToCart}
+            className="AddToCart btn btn-primary"
+        >
+            Add to Cart
+        </button>
     )
 }
 

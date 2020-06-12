@@ -48,7 +48,7 @@ function AuthNav({ cartSize, setCartSize }) {
                 </>
                 )}
             {cartSize > 0 ?
-                <Link to="/cart" className="btn btn-info">Cart: {cartSize}</Link>
+                <Link to="/cart" className="btn btn-info">Cart</Link>
                 : ''
             }
         </span>
