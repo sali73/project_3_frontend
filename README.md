@@ -9,7 +9,7 @@ link here
 **Organizational/Communication Tools Used**
 
 On day one our group decided to spend some time and research tools to help our team's overall communication and organization. We found that Trello would be the best fit for dividing up tasks and tracking our progress. We also decided that holding 15-30 min stand meetings at the start of each day to go over what we have accomplished, what needs to be done, and who is doing what, would be the best way to have everyone up to speed on our app. Lastly, we stayed active on Slack for any questions or suggestions we had for eachother.
-![Trello dashboard](https://files.slack.com/files-pri/T0351JZQ0-F015BSAHDU3/image.png)
+![Trello dashboard](https://trello-attachments.s3.amazonaws.com/5ede57555674e50a6d53b5b8/5edebbe1afe3a55445c1e12b/d54b9787d100490ea47f66a27ebe43b0/image.png)
 
 **Wireframes**
 
