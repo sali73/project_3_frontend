@@ -2,13 +2,10 @@ import About from "../About";
 import Contact from "../Contact";
 import Shop from "../Shop";
 import Home from "../Home";
-<<<<<<< HEAD
-
-=======
 import Login from "../Login";
 import Register from '../Register';
 import Cart from '../Cart';
->>>>>>> 5e63301362d1f7ded02fe8a6d9b425c6a08119e7
+import New from '../New';
 const routes = [
     {
         path: '/home',
@@ -30,8 +27,6 @@ const routes = [
         component: Contact,
         name: 'Contact',
     },
-<<<<<<< HEAD
-=======
     {
         path: '/new',
         component: New,
@@ -52,7 +47,6 @@ const routes = [
         component: Cart,
         name: 'Cart',
     },
->>>>>>> 5e63301362d1f7ded02fe8a6d9b425c6a08119e7
   ]
 
   export { routes };
