@@ -1,23 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-
+import BootstrapCarousel from '../Carousel'
 function Home () {
     return (
         <>
-        {/* <div style={{display:"flex", justifyContent:"space-around"}}>
-        <div className="jumbotron" style={{backgroundImage:"url('https://trello-attachments.s3.amazonaws.com/5ee19ed8ed7850157b41932f/1000x667/6ae3e0ece0053aeb7f79bcfef49f7645/33.jpg')", height:"60vh" ,width:"120vh", textAlign:"end", fontWeight:"bolder", backgroundRepeat:"no-repeat",backgroundPosition:"center", color:"lightgrey", backgroundSize:"cover"}}>
-        <h1 className="display-4" style={{fontSize:"10vh", fontFamily:"Abril Fatface"}}>App Name</h1>
-        <p className="lead" style={{fontSize:"3vh"}}>Shop our latest styles of designer handbags</p>
-        <hr className="my-4"/>
-        <Link style={{backgroundColor:" rgba(150,192,230,0.4)"}}className="btn btn-light btn-lg" to="/shop">Shop</Link>
-        </div>
-        </div> */}
-        <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(whitesmoke, grey)", color: "whitesmoke", textAlign: "right", margin:"0", height:"25vh"} }>
+        <head>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Prata&display=swap" rel="stylesheet"/>
+        </head>
+    
+        <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(white, grey)", color: "whitesmoke", textAlign: "right", margin:"0", height:"25vh"} }>
             <div className="container">
-                 <h1 className="display-4" style={{fontSize:"10vh", fontFamily:"Abril Fatface"}}>App Name</h1>
-                 <p className="lead" style={{fontSize:"3vh"}}>Shop our latest styles of designer handbags</p>
+                 <h1 className="display-4" style={{fontSize:"10vh", fontFamily:'Prata'}}>CES</h1>
+                 <p className="lead" style={{fontSize:"3vh", fontFamily: 'Barlow Semi Condensed'}}>Shop our latest styles of designer handbags</p>
             </div>
-            </div>
+         </div>
+        <BootstrapCarousel></BootstrapCarousel>
                 <div style={{display:"flex",justifyContent:"space-around"}}>
                 <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
@@ -54,8 +51,7 @@ function Home () {
                         <span className="sr-only">Next</span>
                     </a>
                     </div>
-                    </div>
-                    
+            </div>
         </>
     )
 }
