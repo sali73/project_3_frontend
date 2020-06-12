@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import AddToCart from '../AddToCart';
 
 function Show(props) {
     const product = props.location.aboutProps;
@@ -11,7 +12,7 @@ function Show(props) {
             <img src={product.image} alt="..." style={{width:'350px'}}/>
             <h4>price${product.price}</h4>
             <h5>Q:{product.quantity}</h5>
-            <button>ADD TO CART</button>
+            <AddToCart product={product}/>
 
             <h5>Product Details:<p>{product.description}</p></h5>
             

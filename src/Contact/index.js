@@ -9,9 +9,9 @@ class Contact extends Component {
         <h5>CONTACT US</h5>
         <p style={{fontSize:'2vh'}}>Find us on social media by clicking on our Instagram, Facebook, or Twitter.</p>
         
-        <a href="https://www.twitter.com/" className="fa fa-twitter"style={{fontSize:"4vh", color:"black", textDecoration:"none", marginRight:"4vh"}}></a>
-        <a className="fa fa-instagram" style={{fontSize:"4vh", color:"black", textDecoration:"none", marginRight:"4vh"}} href="https://www.instagram.com/"></a>
-        <a className="fa fa-facebook" style={{fontSize:"4vh", color:"black", textDecoration:"none", marginRight:"4vh"}} href="https://www.facebook.com/"></a>
+        <a href="https://www.twitter.com/" style={{fontSize:"4vh", color:"black", textDecoration:"none", marginRight:"4vh"}}><i className="fa fa-twitter"></i></a>
+        <a style={{fontSize:"4vh", color:"black", textDecoration:"none", marginRight:"4vh"}} href="https://www.instagram.com/"><i className="fa fa-instagram"></i></a>
+        <a style={{fontSize:"4vh", color:"black", textDecoration:"none", marginRight:"4vh"}} href="https://www.facebook.com/"><i className="fa fa-facebook"></i></a>
         
         <h5 style={{paddingTop:"2vh"}}>Have Questions About Our Products? </h5>
         <p style={{fontSize:'1.5vh'}}>Call us at 888-888-8888 | Email us at shop@gmail.com</p>
