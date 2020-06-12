@@ -14,7 +14,7 @@ On day one our group decided to spend some time and research tools to help our t
 **Wireframes**
 
 Wireframes for show and shop pages made in google docs
-![Shop wireframe](~/project_3/wireframe-shop.png)
+![Shop wireframe](https://files.slack.com/files-pri/T0351JZQ0-F0154RXC5B8/image.png)
 
 ![Show wireframe](https://files.slack.com/files-pri/T0351JZQ0-F015A6XS9EZ/image.png)
 
