@@ -35,10 +35,12 @@ function Cart(props) {
         getTotal()
     })
 
-
+    
+    // delete function
     function handleDelete(id) {
-
-    }
+        
+    };
+    
 
     return (
         <div className="Cart">

@@ -10,7 +10,6 @@ function AuthNav({ cartSize, setCartSize }) {
 
     useEffect(() => {
         const getData = async () => {
-
             if (userData.user) {
                 const userId = userData.user._id;
                 const loggedInUser = userData.user.username;
