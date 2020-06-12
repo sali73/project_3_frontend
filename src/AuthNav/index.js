@@ -2,18 +2,24 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import UserContext from '../App/UserContext';
 
-function AuthNav() {
+function AuthNav({ cartSize, setCartSize }) {
+
     const { userData, setUserData } = useContext(UserContext);
-    console.log(userData)
     const [username, setUsername] = useState('');
-    const [cartSize, setCartSize] = useState(0);
+
+    async function getData() {
+        if (userData.user) {
+            const loggedInUser = await userData.user.username;
+            const cart = await userData.user.cart;
+            setUsername(loggedInUser)
+            console.log(cart.length)
+            setCartSize(cart.length)
+        }
+    }
 
     useEffect(() => {
-        if (userData.user) {
-            setUsername(userData.user.username)
-            setCartSize(userData.user.cart.length)
-        }
-    }, [userData.user])
+        getData()
+    })
 
     function handleLogout() {
         setUserData({
@@ -22,7 +28,10 @@ function AuthNav() {
             cart: undefined,
         })
         localStorage.setItem('auth-token', '');
+        setUsername('')
+        setCartSize(0)
     }
+
     return (
         <span className="AuthNav">
             {username ?
