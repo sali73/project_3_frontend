@@ -13,7 +13,7 @@ import Register from '../Register';
 import Login from '../Login';
 import Shop from '../Shop';
 import Cart from '../Cart';
-
+import '../style.css'
 function App () {
   // set initial user state
   const [userData, setUserData] = useState({

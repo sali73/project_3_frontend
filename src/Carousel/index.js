@@ -8,7 +8,7 @@ export class BootstrapCarousel extends Component {
                         <div>  
                           
                          <div className='container-fluid' style={{'display':"flex", 'justifyContent':"space-around"}} >  
-                         <Carousel style={{'height':"63vh", 'width':"120vh"}}>  
+                         <Carousel style={{'height':"63vh", 'width':"110vh"}}>  
                          <Carousel.Item style={{'height':"63vh"}} >  
                          <img style={{'height':"63vh"}}  
                          className="d-block w-100"  
