@@ -16,7 +16,7 @@ https://trello-attachments.s3.amazonaws.com/5ee3d2b8e5b5027435f47c98/5ee3d2c086a
 Wireframes for show and shop pages made in google docs
 https://trello-attachments.s3.amazonaws.com/5ee3d2b8e5b5027435f47c98/5ee3d2c086a6422ad38212cc/448ab35a579404d3db02ccdc18e6e24d/image.png
 
-https://trello-attachments.s3.amazonaws.com/5ee3d2b8e5b5027435f47c98/5ee3d2c086a6422ad38212cc/cc9d0cf307993783ab5a11a2c915613c/image.png
+https://trello-attachments.s3.amazonaws.com/5ee3d2b8e5b5027435f47c98/5ee3d2c086a6422ad38212cc/cc9d0cf307993783ab5a11a2c915613c/image.png)
 
 **User Stories**
 

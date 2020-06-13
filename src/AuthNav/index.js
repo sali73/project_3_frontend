@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import UserContext from '../App/UserContext';
 import Axios from 'axios';
-
+import '../style.css'
 function AuthNav({ cartSize, setCartSize }) {
 
     const { userData, setUserData } = useContext(UserContext);
@@ -42,11 +42,11 @@ function AuthNav({ cartSize, setCartSize }) {
                 </>
                 : (
                 <>
-                    <Link to="/login" className="btn btn-success">Login</Link>
-                    <Link to="/signup" className="btn btn-primary">Sign Up</Link>    
+                    <Link to="/login" className="btn btn-success" style={{marginRight:"1vh"}}>Login</Link>
+                    <Link to="/signup" className="btn btn-primary" style={{marginRight:"1vh", }}>Sign Up</Link>    
                 </>
                 )}
-                <Link to="/cart" className="btn btn-info">Cart</Link>
+                <Link to="/cart" className="fa fa-shopping-cart"style={{paddingTop:"1vh", fontSize:"4vh", textDecoration:"none"}}></Link>
         </span>
     )
 }

@@ -1,8 +1,5 @@
 import React from 'react'
-// import '@fortawesome/fontawesome-free/css/all.min.css'; 
-// import'bootstrap-css-only/css/bootstrap.min.css'; 
-// import'mdbreact/dist/css/mdb.css';
-
+import '../style.css'
 import AddToCart from '../AddToCart';
 
 function Show(props) {
@@ -10,10 +7,10 @@ function Show(props) {
     console.log(props.location)
     return (
         <>
-           <head>
-           <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet"></link>
-           </head>
-            <div className='jumbotron-fluid ' style={{textAlign:'center',fontFamily:"Abril Fatface"}}>
+          <head>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Prata&display=swap" rel="stylesheet"/>
+        </head>
+            <div className='jumbotron-fluid ' style={{textAlign:'center',fontFamily: 'Barlow Semi Condensed'}}>
                 <div style={{display:'flex' , paddingTop:"5vh" , justifyContent:'center' }}>   
                     <div className="view overlay zoom">
                         <img src={product.image} className="img-fluid" alt="sample" style={{height:'300px'}}/>      
@@ -25,7 +22,7 @@ function Show(props) {
                         <AddToCart />
                     </div>
                 </div>
-                <div style={{borderStyle: 'groove' , margin:'20px 180px', fontSize:"3vh"}}><h5>Product Details:</h5><p style={{fontFamily:'aril'}}>{product.description}</p></div>
+                <div style={{borderStyle: 'groove' , margin:'20px 180px', fontSize:"3vh"}}><h5>Product Details:</h5><p style={{}}>{product.description}</p></div>
             </div>  
         </>
     )

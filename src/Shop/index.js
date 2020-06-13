@@ -44,21 +44,21 @@ const Shop = ({ cartSize, setCartSize }) => {
            
             <Link style={{paddingLeft:"2vh"}}to="/new">Add Product</Link>
             {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
-            <div className="filters-content" style={{display:"flex", flexDirection:"row"}}>
-            <div className="filters" style={{width:"20%", paddingLeft:"2vh"}}>
-                <h4 style={{borderTop:"solid grey"}}>Filter by Color</h4>
+            <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
+            <div className="filters" style={{width:"15vh", paddingLeft:"2vh"}}>
+                <h4 style={{borderTop:"solid grey", paddingTop:"2vh"}}>Filter by Color</h4>
                 <label for="red"> Red</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="red"  value="color"/><br />
                 <label for="tan"> Tan</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="tan"  value="color"/><br />
                 <label for="black"> Black</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="black"  value="color" /><br />
-                <h4 style={{borderTop:"solid grey"}}>Filter by Name</h4>
+                <h4 style={{borderTop:"solid grey", paddingTop:"2vh", marginTop:"2vh"}}>Filter by Name</h4>
                 <label for="tote"> Tote</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br />
                 <label for="purse"> Purse</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/><br />
-                <label for="shopping bag">Shopping Bag</label>
+                <label for="shopping bag">Handbag</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/><br />
                 
             </div>
@@ -68,7 +68,7 @@ const Shop = ({ cartSize, setCartSize }) => {
                     ? products.map((product) => {
                         
                           return (
-                            <div key={product._id} className="card .d-flex" style={{width: "18rem"}}>
+                            <div key={product._id} className="card .d-flex" style={{width: "18rem", border:"none",fontFamily: 'Barlow Semi Condensed'}}>
                                 <Link to={{
                                     pathname: `/show/${product._id}`,
                                     aboutProps: {
@@ -78,10 +78,11 @@ const Shop = ({ cartSize, setCartSize }) => {
                                     <img src={product.image} className="card-img-top" alt="..." />
                                 </Link>
                                 <div className="card-body">
-                                    <span style={{marginRight: "8vh", fontSize: "3vh"}} className="card-title">{product.name}</span><span className="card-title">${product.price}</span>
-                                    <p className="card-text">{product.description}</p>
+                                    <span style={{marginRight: "8vh", fontSize: "3.5vh"}} className="card-title">{product.name}</span><span style={{fontSize:"2.5vh"}}
+                                     className="card-title">${product.price}</span>
+                                    <p className="card-text" style={{fontSize:"2vh"}}>{product.description}</p>
                                     <AddToCart product={product} cartSize={cartSize} setCartSize={setCartSize} />
-                                    <button className="btn btn-dark" onClick={() => {handleDelete(product._id)}}>X</button>
+                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}>X</button>
                                     <Link to={{
                                         pathname: `/edit/${product._id}`,
                                         aboutProps: {
