@@ -7,6 +7,7 @@ function AuthNav({ cartSize, setCartSize }) {
 
     const { userData, setUserData } = useContext(UserContext);
     const [username, setUsername] = useState('');
+    const [isLoggedOut, setIsLoggedOut] = useState(false);
 
     const getData = async () => {
         const userId = userData.user._id;
@@ -20,7 +21,7 @@ function AuthNav({ cartSize, setCartSize }) {
 
     useEffect(() => {
         getData()
-    }, [userData.user.cart])
+    })
 
     function handleLogout() {
         setUserData({
@@ -31,6 +32,7 @@ function AuthNav({ cartSize, setCartSize }) {
         localStorage.setItem('auth-token', '');
         setUsername('')
         setCartSize(0)
+        setIsLoggedOut(!isLoggedOut)
     }
 
     return (
