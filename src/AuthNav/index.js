@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import UserContext from '../App/UserContext';
 import Axios from 'axios';
 import '../style.css'
@@ -25,9 +25,9 @@ function AuthNav({ cartSize, setCartSize }) {
 
     function handleLogout() {
         setUserData({
-            token: undefined,
-            user: undefined,
-            cart: undefined,
+            token: '',
+            user: '',
+            cart: [],
         })
         localStorage.setItem('auth-token', '');
         setUsername('')
@@ -49,6 +49,9 @@ function AuthNav({ cartSize, setCartSize }) {
                 </>
                 )}
                 <Link to="/cart" className="fa fa-shopping-cart"style={{paddingTop:"1vh", fontSize:"4vh", textDecoration:"none"}}></Link>
+                {isLoggedOut ?
+                    <Redirect to="/shop" />
+                    : ''}
         </span>
     )
 }
