@@ -14,7 +14,7 @@ function Register() {
             password,
         }
         console.log(user)
-        const response = await fetch('http://localhost:3001/users/', {
+        const response = await fetch('https://seir-reactivity.herokuapp.com/users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
