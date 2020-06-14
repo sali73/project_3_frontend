@@ -9,7 +9,7 @@ const Shop = ({ cartSize, setCartSize }) => {
     
     //Function to get products from API
     const getInfo = async () => {
-        const response = await fetch('http://localhost:3001/products');
+        const response = await fetch('https://seir-reactivity.herokuapp.com/products');
         const result = await response.json();
         console.log('products:', result);
         setProducts(result);
@@ -22,7 +22,7 @@ const Shop = ({ cartSize, setCartSize }) => {
 
     // delete function
     const handleDelete = async (id) => {
-        const response = await fetch(`http://localhost:3001/products/${id}`, {
+        const response = await fetch(`https://seir-reactivity.herokuapp.com/products/${id}`, {
             method: 'DELETE',
         });
         getInfo();
