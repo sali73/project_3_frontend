@@ -54,14 +54,13 @@ const Shop = ({ cartSize, setCartSize }) => {
                 <label for="tan"> Tan</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="tan"  value="color"/><br />
                 <h5 style={{borderTop:"solid grey", paddingTop:"2vh", marginTop:"2vh"}}>Filter by Name</h5>
-               
-                
                 <label for="shopping bag">Handbag</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/><br/>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/><br />
                 <label for="purse"> Purse</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/><br />
                 <label for="tote"> Tote</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br /><br />
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br />
+               
                 
             </div>
             <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>

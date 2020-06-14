@@ -25,7 +25,7 @@ function Show(props) {
                 <div style={{borderStyle: 'groove' , margin:'20px 180px', fontSize:"3vh"}}><h5>Product Details:</h5><p style={{}}>{product.description}</p>
                 </div>
                 
-                <button type="button" class="btn btn-primary"><a style={{color:'white', textDecoration:'none'}} href='http://localhost:3000/shop'>Back To Shop Page </a> </button>
+                <button type="button" class="btn btn-primary" style={{ marginBottom:'30px'}}><a style={{color:'white', textDecoration:'none'}} href='http://localhost:3000/shop'>Go Back</a> </button>
             </div>  
         </>
     )
