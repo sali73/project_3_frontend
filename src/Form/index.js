@@ -39,7 +39,6 @@ function Form ({ initialState, callMethod, productId }) {
             },
             body: JSON.stringify(product)
         })
-        console.log(response)
         setIsRedirect(true);
     }
 

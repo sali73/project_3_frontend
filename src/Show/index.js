@@ -4,7 +4,6 @@ import AddToCart from '../AddToCart';
 
 function Show(props) {
     const product = props.location.aboutProps;
-    console.log(props.location)
     return (
         <>
           <head>

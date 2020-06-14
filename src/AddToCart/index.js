@@ -16,7 +16,6 @@ function AddToCart({ product }) {
                     product: product,
                 },
             )
-            console.log(response);
             setUserData(userData);
         }
 

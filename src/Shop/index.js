@@ -5,13 +5,11 @@ import AddToCart from '../AddToCart';
 const Shop = ({ cartSize, setCartSize }) => {
   
     const [products, setProducts] = React.useState(null);
-        
     
     //Function to get products from API
     const getInfo = async () => {
         const response = await fetch('https://seir-reactivity.herokuapp.com/products');
         const result = await response.json();
-        console.log('products:', result);
         setProducts(result);
     };
     
@@ -26,7 +24,6 @@ const Shop = ({ cartSize, setCartSize }) => {
             method: 'DELETE',
         });
         getInfo();
-        console.log(response)
     };
     
      

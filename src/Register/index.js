@@ -13,7 +13,6 @@ function Register() {
             username,
             password,
         }
-        console.log(user)
         const response = await fetch('https://seir-reactivity.herokuapp.com/users/', {
             method: 'POST',
             headers: {
@@ -21,7 +20,6 @@ function Register() {
             },
             body: JSON.stringify(user)
         })
-        console.log(response);
     }
 
     return (

@@ -16,7 +16,6 @@ function Cart(props) {
             const response = await axios.get(
                 `https://seir-reactivity.herokuapp.com/users/cart/${userId}`
             )
-            console.log('oops', response.data);
             setCart(response.data) 
         }
         getCart()
@@ -26,9 +25,7 @@ function Cart(props) {
         const getTotal = () => {
             let cartTotal = 0
             for (let product of cart) {
-                console.log(product.price)
                 cartTotal += product.price;
-                console.log('cart', cartTotal)
             }
             setTotal(cartTotal.toFixed(2));
         }

@@ -26,7 +26,6 @@ function Login() {
             token: response.data.token,
             user: response.data.user,
         });
-        console.log(response)
         localStorage.setItem('auth-token', response.data.token);
         setIsLoggedIn(true);
     }
