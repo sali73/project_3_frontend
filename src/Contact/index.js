@@ -8,13 +8,12 @@ class Contact extends Component {
         <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Prata&display=swap" rel="stylesheet"/>
         </head>
     
-         <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(white, grey)", color: "whitesmoke", textAlign: "right", margin:"0", height:"25vh"} }>
+        <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(white, grey)", color: "whitesmoke", textAlign: "right", margin:"0"} }>
             <div className="container">
-                 <h1 className="display-4" style={{fontSize:"10vh", fontFamily:"prata"}}>CES</h1>
-                 <p className="lead" style={{fontSize:"3vh", fontFamily: 'Barlow Semi Condensed'}}>Shop our latest styles of designer handbags</p>
+                 <h1 className="display-4" style={{ fontFamily:"prata"}}>CES</h1>
+                 <p className="lead" style={{ fontFamily: 'Barlow Semi Condensed', fontSize:"2rem"}}>Shop our latest styles of designer handbags</p>
             </div>
          </div>
-         <div className="jumbotron">
         <main>
         <h5>CONTACT US</h5>
         <p style={{fontSize:'2vh'}}>Find us on social media by clicking on our Instagram, Facebook, or Twitter.</p>
@@ -36,7 +35,7 @@ class Contact extends Component {
         <aside></aside>
       </div>
 
-      </div>
+      
     )
   }
 }

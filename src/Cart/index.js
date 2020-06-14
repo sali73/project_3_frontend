@@ -49,7 +49,12 @@ function Cart(props) {
             <head>
             <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300&family=Prata&display=swap" rel="stylesheet"/>
             </head>
-    
+            <div className="jumbotron jumbotron-fluid" style={{backgroundImage: "linear-gradient(white, grey)", color: "whitesmoke", textAlign: "right", margin:"0"} }>
+            <div className="container">
+                 <h1 className="display-4" style={{ fontFamily:"prata"}}>CES</h1>
+                 <p className="lead" style={{ fontFamily: 'Barlow Semi Condensed', fontSize:"2rem"}}>Shop our latest styles of designer handbags</p>
+            </div>
+         </div>
             <h2 style={{fontFamily: 'Barlow Semi Condensed'}}>Shopping Cart</h2>
             <h3 style={{ fontFamily: 'Barlow Semi Condensed'}}>Total: ${total}</h3>
             {cart.map((product, index) => {
