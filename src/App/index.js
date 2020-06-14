@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import axios from 'axios';
 import MainNav from '../MainNav';
 import { routes } from "./routes";
@@ -68,6 +68,9 @@ function App () {
                 ></Route>
                 )
             })}
+            <Route exact path="/">
+              <Redirect to="/home" />
+            </Route>
             <Route
               path="/shop"
               render={(cartSize, setCartSize) => <Shop cartSize={cartSize} setCartSize={setCartSize} />}
