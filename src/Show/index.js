@@ -22,7 +22,10 @@ function Show(props) {
                         <AddToCart />
                     </div>
                 </div>
-                <div style={{borderStyle: 'groove' , margin:'20px 180px', fontSize:"3vh"}}><h5>Product Details:</h5><p style={{}}>{product.description}</p></div>
+                <div style={{borderStyle: 'groove' , margin:'20px 180px', fontSize:"3vh"}}><h5>Product Details:</h5><p style={{}}>{product.description}</p>
+                </div>
+                
+                <button type="button" class="btn btn-primary"><a style={{color:'white', textDecoration:'none'}} href='http://localhost:3000/shop'>Back To Shop Page </a> </button>
             </div>  
         </>
     )
