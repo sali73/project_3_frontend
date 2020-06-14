@@ -35,6 +35,7 @@ class Contact extends Component {
         </main>
         </div>
       </div>
+     
 
       
     )

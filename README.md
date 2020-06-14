@@ -2,9 +2,8 @@
 
 **link to deployed app**
 
-link here
+https://ces-store.netlify.app/home
 
-**Technologies Used**
 
 **Organizational/Communication Tools Used**
 
