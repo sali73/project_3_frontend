@@ -69,7 +69,7 @@ const Shop = ({ cartSize, setCartSize }) => {
                     ? products.map((product) => {
                         
                           return (
-                            <div key={product._id} className="card .d-flex" style={{width: "30%",height:"30%", border:"none",fontFamily: 'Barlow Semi Condensed'}}>
+                            <div key={product._id} className="card .d-flex" style={{width: "30vh", border:"none",fontFamily: 'Barlow Semi Condensed'}}>
                                 <Link to={{
                                     pathname: `/show/${product._id}`,
                                     aboutProps: {
