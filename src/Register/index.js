@@ -1,4 +1,6 @@
 import React, { useState, useContext } from 'react';
+import { Redirect } from 'react-router-dom'; 
+import axios from 'axios';
 import UserContext from '../App/UserContext.js';
 import '../style.css'
 function Register() {
@@ -7,26 +9,35 @@ function Register() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const { setUserData } = useContext(UserContext);
+    const [isRegistered, setIsRegistered] = useState(false);
 
     // register
     async function handleRegister(event) {
         event.preventDefault()
-        const user = {
-            username,
-            password,
+        try {
+            const user = {
+                username,
+                password,
+            }
+            const response = await axios.post(
+                'https://seir-reactivity.herokuapp.com/users/',
+                JSON.stringify(user),
+                {
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                },
+            )
+            setUserData({
+                token: response.data.token,
+                user: response.data.user,
+            });
+            localStorage.setItem('auth-token', response.data.token);
+            setIsRegistered(true);
         }
-        const response = await fetch('https://seir-reactivity.herokuapp.com/users/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-        setUserData({
-            token: response.data.token,
-            user: response.data.user,
-        });
-        localStorage.setItem('auth-token', response.data.token);
+        catch (err) {
+            console.log(err)
+        }
     }
 
     return (
@@ -37,8 +48,7 @@ function Register() {
                     type="text"
                     id="username"
                     autoComplete="username"
-                    className="form-control"
-                    value={username}
+                    className="form-control"                    value={username}
                     onChange={event => setUsername(event.target.value)}
                 />
                 <label htmlFor="password">Password:</label>
@@ -54,6 +64,9 @@ function Register() {
                     onChange={event => setPassword(event.target.value)}
                 /><br/>
                 <button className="btn btn-success">Sign Up</button>
+                {isRegistered ?
+                    <Redirect to="/shop" /> 
+                    : ''}
             </form>
         </div>
     )
