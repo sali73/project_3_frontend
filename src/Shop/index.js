@@ -42,7 +42,7 @@ const Shop = ({ cartSize, setCartSize }) => {
             <Link style={{paddingLeft:"2vh"}}to="/new"><img style={{height:'55px', paddingTop:'10px'}}src= 'add.ico'></img></Link>
             {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
             <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
-            <div className="filters" style={{width:"26%",paddingLeft:"2vh", paddingRight:"2vh", paddingTop:"2vh",fontFamily: 'Barlow Semi Condensed'}}>
+            <div className="filters" style={{width:"26%",paddingLeft:"2vh", paddingRight:"2vh", paddingTop:"2vh",fontFamily: 'Barlow Semi Condensed',backgroundColor:"whitesmoke"}}>
                 <h5 style={{borderTop:"solid grey", paddingTop:"2vh", fontWeight:"bold"}}>Choose by Color</h5>
                 <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="black"> Black</label>
