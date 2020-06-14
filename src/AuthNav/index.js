@@ -40,7 +40,7 @@ function AuthNav({ cartSize, setCartSize }) {
             {username ?
                 <>
                     <span>{username}</span>
-                    <button className="btn btn-warning" onClick={handleLogout}>Logout</button>
+                    <button className="btn btn-warning" onClick={handleLogout} style={{marginRight:"1vh"}}>Logout</button>
                 </>
                 : (
                 <>
@@ -48,7 +48,7 @@ function AuthNav({ cartSize, setCartSize }) {
                     <Link to="/signup" className="btn btn-primary" style={{marginRight:"1vh", }}>Sign Up</Link>    
                 </>
                 )}
-                <Link to="/cart" className="fa fa-shopping-cart"style={{paddingTop:"1vh", fontSize:"4vh", textDecoration:"none"}}></Link>
+                <Link to="/cart" className="fa fa-shopping-cart"style={{paddingTop:"1vh", fontSize:"4vh", textDecoration:"none", marginRight:"1vh"}}></Link>
                 {isLoggedOut ?
                     <Redirect to="/shop" />
                     : ''}
