@@ -14,9 +14,8 @@ function Cart(props) {
     useEffect(() => {
         const getCart = async () => {
             const response = await axios.get(
-                `http://localhost:3001/users/cart/${userId}`
+                `https://seir-reactivity.herokuapp.com/users/cart/${userId}`
             )
-            console.log('oops', response.data);
             setCart(response.data) 
         }
         getCart()
@@ -26,9 +25,7 @@ function Cart(props) {
         const getTotal = () => {
             let cartTotal = 0
             for (let product of cart) {
-                console.log(product.price)
                 cartTotal += product.price;
-                console.log('cart', cartTotal)
             }
             setTotal(cartTotal.toFixed(2));
         }
@@ -38,7 +35,7 @@ function Cart(props) {
     
     // delete function
     async function handleDelete(id) {
-        const response = await axios.delete(`http://localhost:3001/users/${userId}/${id}`)
+        const response = await axios.delete(`https://seir-reactivity.herokuapp.com/users/${userId}/${id}`)
         setCart(response.data)
         setUserData(userData)
     };

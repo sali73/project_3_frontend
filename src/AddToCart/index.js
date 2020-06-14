@@ -10,13 +10,12 @@ function AddToCart({ product }) {
         if (userData.user) {
             const userId = userData.user._id;
             const response = await axios.post(
-                'http://localhost:3001/users/addToCart',
+                'https://seir-reactivity.herokuapp.com/users/addToCart',
                 {
                     userId,
                     product: product,
                 },
             )
-            console.log(response);
             setUserData(userData);
         }
 

@@ -19,7 +19,7 @@ function Login() {
             password,
         }
         const response = await axios.post(
-            'http://localhost:3001/auth/',
+            'https://seir-reactivity.herokuapp.com/auth/',
             user
         )
         setUserData({

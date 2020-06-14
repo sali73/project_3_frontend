@@ -28,7 +28,7 @@ function Form ({ initialState, callMethod, productId }) {
             price,
             quantity,
         }
-        let fetchUrl = 'http://localhost:3001/products/';
+        let fetchUrl = 'https://seir-reactivity.herokuapp.com/products/';
         if (callMethod === 'PUT') {
             fetchUrl += productId;
         }
@@ -39,7 +39,6 @@ function Form ({ initialState, callMethod, productId }) {
             },
             body: JSON.stringify(product)
         })
-        console.log(response)
         setIsRedirect(true);
     }
 

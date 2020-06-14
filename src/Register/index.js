@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+import UserContext from '../App/UserContext.js';
 import '../style.css'
 function Register() {
 
     // state
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const { setUserData } = useContext(UserContext);
 
     // register
     async function handleRegister(event) {
@@ -13,15 +15,18 @@ function Register() {
             username,
             password,
         }
-        console.log(user)
-        const response = await fetch('http://localhost:3001/users/', {
+        const response = await fetch('https://seir-reactivity.herokuapp.com/users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
         })
-        console.log(response);
+        setUserData({
+            token: response.data.token,
+            user: response.data.user,
+        });
+        localStorage.setItem('auth-token', response.data.token);
     }
 
     return (

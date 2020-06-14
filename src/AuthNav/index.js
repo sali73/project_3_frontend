@@ -13,7 +13,7 @@ function AuthNav({ cartSize, setCartSize }) {
         const userId = userData.user._id;
         const loggedInUser = userData.user.username;
         const cart = await Axios.get(
-            `http://localhost:3001/users/cart/${userId}`
+            `https://seir-reactivity.herokuapp.com/users/cart/${userId}`
         )
         setUsername(loggedInUser)
         setCartSize(cart.data.length)
@@ -39,8 +39,8 @@ function AuthNav({ cartSize, setCartSize }) {
         <span className="AuthNav">
             {username ?
                 <>
-                    <span>{username}</span>
-                    <button className="btn btn-warning" onClick={handleLogout}>Logout</button>
+                    <span style={{margin: '0 1vh'}}>{username}</span>
+                    <button className="btn btn-warning" onClick={handleLogout} style={{marginRight:"1vh"}}>Logout</button>
                 </>
                 : (
                 <>
@@ -48,7 +48,7 @@ function AuthNav({ cartSize, setCartSize }) {
                     <Link to="/signup" className="btn btn-primary" style={{marginRight:"1vh", }}>Sign Up</Link>    
                 </>
                 )}
-                <Link to="/cart" className="fa fa-shopping-cart"style={{paddingTop:"1vh", fontSize:"4vh", textDecoration:"none"}}></Link>
+                <Link to="/cart" className="fa fa-shopping-cart"style={{paddingTop:"1vh", fontSize:"4vh", textDecoration:"none", marginRight:"1vh"}}></Link>
                 {isLoggedOut ?
                     <Redirect to="/shop" />
                     : ''}

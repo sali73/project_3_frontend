@@ -5,13 +5,11 @@ import AddToCart from '../AddToCart';
 const Shop = ({ cartSize, setCartSize }) => {
   
     const [products, setProducts] = React.useState(null);
-        
     
     //Function to get products from API
     const getInfo = async () => {
-        const response = await fetch('http://localhost:3001/products');
+        const response = await fetch('https://seir-reactivity.herokuapp.com/products');
         const result = await response.json();
-        console.log('products:', result);
         setProducts(result);
     };
     
@@ -22,11 +20,10 @@ const Shop = ({ cartSize, setCartSize }) => {
 
     // delete function
     const handleDelete = async (id) => {
-        const response = await fetch(`http://localhost:3001/products/${id}`, {
+        const response = await fetch(`https://seir-reactivity.herokuapp.com/products/${id}`, {
             method: 'DELETE',
         });
         getInfo();
-        console.log(response)
     };
     
      
@@ -42,7 +39,7 @@ const Shop = ({ cartSize, setCartSize }) => {
             </div>
          </div>
            
-            <Link style={{paddingLeft:"2vh"}}to="/new">Add Product</Link>
+            <Link style={{paddingLeft:"2vh"}}to="/new"><img style={{height:'55px', paddingTop:'10px'}}src= 'add.ico'></img></Link>
             {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
             <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
             <div className="filters" style={{width:"26%",heigth:"40%", paddingLeft:"2vh"}}>
@@ -84,13 +81,13 @@ const Shop = ({ cartSize, setCartSize }) => {
                                     <p className="card-text" style={{fontSize:"2vh"}}>{product.description}</p>
                                     <AddToCart product={product} cartSize={cartSize} setCartSize={setCartSize} />
                                     
-                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}><img src='C.ico' style={{height:'20px'}}></img></button>
+                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}><img src='C.ico' style={{height:'20px'}} alt="delete"></img></button>
                                     <Link to={{
                                         pathname: `/edit/${product._id}`,
                                         aboutProps: {
                                             ...product
                                         }
-                                    }}><img src='D.ico' style={{height:'25px'}}></img></Link>
+                                    }}><img src='D.ico' alt="edit" style={{height:'25px'}}></img></Link>
                                 </div>
                             </div>
                         );
