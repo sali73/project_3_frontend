@@ -55,8 +55,9 @@ function Cart(props) {
                  <p className="lead" style={{ fontFamily: 'Barlow Semi Condensed', fontSize:"2rem"}}>Shop our latest styles of designer handbags</p>
             </div>
          </div>
-            <h2 style={{fontFamily: 'Barlow Semi Condensed'}}>Shopping Cart</h2>
-            <h3 style={{ fontFamily: 'Barlow Semi Condensed'}}>Total: ${total}</h3>
+         <div style={{ margin:'50px 500px 200px 60px'}}>
+            <h2 style={{fontFamily: 'Barlow Semi Condensed', color:'red'}}>Shopping Cart</h2>
+            <h3 style={{ fontFamily: 'Barlow Semi Condensed',color:'red'}}>Total: ${total}</h3>
             {cart.map((product, index) => {
                 return (
                     <div key={index}>
@@ -67,6 +68,7 @@ function Cart(props) {
                     </div>
                 )
             })}
+            </div>
         </div>
     )
 }

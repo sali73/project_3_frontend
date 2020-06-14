@@ -45,21 +45,22 @@ const Shop = ({ cartSize, setCartSize }) => {
             <Link style={{paddingLeft:"2vh"}}to="/new">Add Product</Link>
             {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
             <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
-            <div className="filters" style={{width:"20%",heigth:"40%", paddingLeft:"2vh"}}>
-                <h4 style={{borderTop:"solid grey", paddingTop:"2vh"}}>Filter by Color</h4>
+            <div className="filters" style={{width:"26%",heigth:"40%", paddingLeft:"2vh"}}>
+                <h5 style={{borderTop:"solid grey", paddingTop:"2vh"}}>Choose by Color</h5>
+                <label for="black"> Black</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="black"  value="color" /><br />
                 <label for="red"> Red</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="red"  value="color"/><br />
                 <label for="tan"> Tan</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="tan"  value="color"/><br />
-                <label for="black"> Black</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="black"  value="color" /><br />
-                <h4 style={{borderTop:"solid grey", paddingTop:"2vh", marginTop:"2vh"}}>Filter by Name</h4>
-                <label for="tote"> Tote</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br />
-                <label for="purse"> Purse</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/><br />
+                <h5 style={{borderTop:"solid grey", paddingTop:"2vh", marginTop:"2vh"}}>Filter by Name</h5>
                 <label for="shopping bag">Handbag</label>
                 <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/><br />
+                <label for="purse"> Purse</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/><br />
+                <label for="tote"> Tote</label>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br />
+               
                 
             </div>
             <div id="Content" style={{display: "flex", flexWrap: "wrap", flexDirection: "row", paddingLeft: "8vh"}}>
@@ -82,13 +83,14 @@ const Shop = ({ cartSize, setCartSize }) => {
                                      className="card-title">${product.price}</span>
                                     <p className="card-text" style={{fontSize:"2vh"}}>{product.description}</p>
                                     <AddToCart product={product} cartSize={cartSize} setCartSize={setCartSize} />
-                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}>X</button>
+                                    
+                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}><img src='C.ico' style={{height:'20px'}}></img></button>
                                     <Link to={{
                                         pathname: `/edit/${product._id}`,
                                         aboutProps: {
                                             ...product
                                         }
-                                    }}>Edit</Link>
+                                    }}><img src='D.ico' style={{height:'25px'}}></img></Link>
                                 </div>
                             </div>
                         );

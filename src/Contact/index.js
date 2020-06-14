@@ -14,7 +14,8 @@ class Contact extends Component {
                  <p className="lead" style={{ fontFamily: 'Barlow Semi Condensed', fontSize:"2rem"}}>Shop our latest styles of designer handbags</p>
             </div>
          </div>
-        <main>
+        <div >
+        <main style={{ margin:'50px 500px 150px 60px'}}>
         <h5>CONTACT US</h5>
         <p style={{fontSize:'2vh'}}>Find us on social media by clicking on our Instagram, Facebook, or Twitter.</p>
         
@@ -32,7 +33,7 @@ class Contact extends Component {
 
         Only regular priced items may be refunded. Sale items are non-refundable.</p>
         </main>
-        <aside></aside>
+        </div>
       </div>
 
       

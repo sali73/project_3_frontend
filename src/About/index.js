@@ -14,8 +14,8 @@ class About extends Component {
                  <p className="lead" style={{ fontFamily: 'Barlow Semi Condensed', fontSize:"2rem"}}>Shop our latest styles of designer handbags</p>
             </div>
          </div>
-      <div className="jumbotron">
-        <main>
+      <div >
+        <main style={{ margin:'50px 500px 150px 60px'}}>
         <h5>ABOUT US</h5>
         <p style={{fontSize:'.9rem'}}>CES STORE - THE FINEST EDIT IN LUXURY FASHION
         CES STORE is the finest edit in luxury fashion for women. We have over 250 of the best international designers, 1200 new arrivals each week, fast and reliable delivery, excellent customer service, utmost security and data protection, and free returns and exchanges within 30 days.</p>

@@ -31,7 +31,7 @@ function Login() {
     }
 
     return (
-        <div className="Login">
+        <div className="Login" style={{ margin:'50px 500px 200px 60px'}}>
             <form onSubmit={handleLogin} className="form-group">
                 <label htmlFor="username">Username:</label>
                 <input
@@ -50,7 +50,7 @@ function Login() {
                     className="form-control"
                     value={password}
                     onChange={event => setPassword(event.target.value)}
-                />
+                /><br/>
                 <button className="btn btn-success">Login</button>
             </form>
             {isLoggedIn ? <Redirect to='/shop' /> : ''}

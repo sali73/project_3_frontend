@@ -55,7 +55,7 @@ function Form ({ initialState, callMethod, productId }) {
                 <label htmlFor="price">Price:</label>
                 <FormControl formValue={price} formHandler={setPrice} inputType="number" />
                 <label htmlFor="quantity">Quantity:</label>
-                <FormControl formValue={quantity} formHandler={setQuantity} inputType="number" />
+                <FormControl formValue={quantity} formHandler={setQuantity} inputType="number" /><br/>
                 <button className="btn btn-primary">Submit</button>
             </form>
             {isRedirect ? <Redirect to="/shop" /> : ''}

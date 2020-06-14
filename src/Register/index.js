@@ -25,7 +25,7 @@ function Register() {
     }
 
     return (
-        <div className="Login">
+        <div className="Login" style={{ margin:'50px 500px 200px 60px'}}>
             <form onSubmit={handleRegister} className="form-group">
                 <label htmlFor="username">Username:</label>
                 <input
@@ -44,7 +44,7 @@ function Register() {
                     className="form-control"
                     value={password}
                     onChange={event => setPassword(event.target.value)}
-                />
+                /><br/>
                 <button className="btn btn-success">Sign Up</button>
             </form>
         </div>
