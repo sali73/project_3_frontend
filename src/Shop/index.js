@@ -42,21 +42,27 @@ const Shop = ({ cartSize, setCartSize }) => {
             <Link style={{paddingLeft:"2vh"}}to="/new"><img style={{height:'55px', paddingTop:'10px'}}src= 'add.ico'></img></Link>
             {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
             <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
-            <div className="filters" style={{width:"26%",heigth:"40%", paddingLeft:"2vh"}}>
-                <h5 style={{borderTop:"solid grey", paddingTop:"2vh"}}>Choose by Color</h5>
+            <div className="filters" style={{width:"26%",paddingLeft:"2vh", paddingRight:"2vh", paddingTop:"2vh",fontFamily: 'Barlow Semi Condensed',backgroundColor:"whitesmoke"}}>
+                <h5 style={{borderTop:"solid grey", paddingTop:"2vh", fontWeight:"bold"}}>Choose by Color</h5>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="black"> Black</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="black"  value="color" /><br />
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="black"  value="color" /></div><br />
+                <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="red"> Red</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="red"  value="color"/><br />
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="red"  value="color"/></div><br />
+                 <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="tan"> Tan</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tan"  value="color"/><br />
-                <h5 style={{borderTop:"solid grey", paddingTop:"2vh", marginTop:"2vh"}}>Filter by Name</h5>
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tan"  value="color"/></div><br />
+                <h5 style={{borderTop:"solid grey", paddingTop:"2vh", marginTop:"2vh", fontWeight:"bold"}}>Filter by Name</h5>
+                <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="shopping bag">Handbag</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/><br />
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="shopping bag"  value="name"/></div><br />
+                <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="purse"> Purse</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/><br />
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="purse"  value="name"/></div><br />
+                <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="tote"> Tote</label>
-                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/><br />
+                <input style={{ marginLeft:"1vh"}} type="checkbox" id="tote"  value="name"/></div>
                
                 
             </div>
@@ -66,7 +72,7 @@ const Shop = ({ cartSize, setCartSize }) => {
                     ? products.map((product) => {
                         
                           return (
-                            <div key={product._id} className="card .d-flex" style={{width: "30%",height:"30%", border:"none",fontFamily: 'Barlow Semi Condensed'}}>
+                            <div key={product._id} className="card .d-flex" style={{width: "30vh", border:"none",fontFamily: 'Barlow Semi Condensed'}}>
                                 <Link to={{
                                     pathname: `/show/${product._id}`,
                                     aboutProps: {
