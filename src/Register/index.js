@@ -42,6 +42,7 @@ function Register() {
                     onChange={event => setUsername(event.target.value)}
                 />
                 <label htmlFor="password">Password:</label>
+                <p>password must be at least 6 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character</p>
                 <input
                     type="password"
                     id="password"
