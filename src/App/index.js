@@ -32,13 +32,13 @@ function App () {
         token = '';
       }
       const tokenRes = await axios.post(
-        'https://seir-reactivity.herokuapp.com//auth/validateToken',
+        'https://seir-reactivity.herokuapp.com/auth/validateToken',
         null,
         { headers: { 'x-auth-token': token }},
       );
       if (tokenRes.data) {
         const userRes = await axios.get(
-          'https://seir-reactivity.herokuapp.com//auth/',
+          'https://seir-reactivity.herokuapp.com/auth/',
           { headers: { 'x-auth-token': token },
         })
         setUserData({
