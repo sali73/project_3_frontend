@@ -39,7 +39,7 @@ function AuthNav({ cartSize, setCartSize }) {
         <span className="AuthNav">
             {username ?
                 <>
-                    <span>{username}</span>
+                    <span style={{margin: '0 1vh'}}>{username}</span>
                     <button className="btn btn-warning" onClick={handleLogout} style={{marginRight:"1vh"}}>Logout</button>
                 </>
                 : (

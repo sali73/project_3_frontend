@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+import UserContext from '../App/UserContext.js';
 import '../style.css'
 function Register() {
 
     // state
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const { setUserData } = useContext(UserContext);
 
     // register
     async function handleRegister(event) {
@@ -20,6 +22,11 @@ function Register() {
             },
             body: JSON.stringify(user)
         })
+        setUserData({
+            token: response.data.token,
+            user: response.data.user,
+        });
+        localStorage.setItem('auth-token', response.data.token);
     }
 
     return (
