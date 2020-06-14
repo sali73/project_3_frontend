@@ -82,13 +82,13 @@ const Shop = ({ cartSize, setCartSize }) => {
                                      className="card-title">${product.price}</span>
                                     <p className="card-text" style={{fontSize:"2vh"}}>{product.description}</p>
                                     <AddToCart product={product} cartSize={cartSize} setCartSize={setCartSize} />
-                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}>X</button>
+                                    <button className="btn btn-light" onClick={() => {handleDelete(product._id)}}><img src='x.ico' style={{height:'28px'}}></img></button>
                                     <Link to={{
                                         pathname: `/edit/${product._id}`,
                                         aboutProps: {
                                             ...product
                                         }
-                                    }}>Edit</Link>
+                                    }}><img src='ee.ico' style={{height:'30px'}}></img></Link>
                                 </div>
                             </div>
                         );
