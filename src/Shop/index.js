@@ -42,7 +42,7 @@ const Shop = ({ cartSize, setCartSize }) => {
             <Link style={{paddingLeft:"2vh"}}to="/new"><img style={{height:'55px', paddingTop:'10px'}}src= 'add.ico'></img></Link>
             {/*This is just a placeholder for filters, they dont work but I thought that atleast we could keep them to add on to later, also just like the look of having it*/}
             <div className="filters-content" style={{display:"flex", flexDirection:"row", marginTop:"4vh"}}>
-            <div className="filters" style={{width:"26%",paddingLeft:"2vh", paddingRight:"2vh", paddingTop:"2vh",fontFamily: 'Barlow Semi Condensed',backgroundColor:"whitesmoke"}}>
+            <div className="filters" style={{width:"26vh",paddingLeft:"2vh", paddingRight:"2vh", paddingTop:"2vh",fontFamily: 'Barlow Semi Condensed',backgroundColor:"whitesmoke"}}>
                 <h5 style={{borderTop:"solid grey", paddingTop:"2vh", fontWeight:"bold"}}>Choose by Color</h5>
                 <div style={{display:"flex", justifyContent:"space-between"}}>
                 <label for="black"> Black</label>
@@ -72,18 +72,20 @@ const Shop = ({ cartSize, setCartSize }) => {
                     ? products.map((product) => {
                         
                           return (
-                            <div key={product._id} className="card .d-flex" style={{width: "30vh", border:"none",fontFamily: 'Barlow Semi Condensed'}}>
+                            <div key={product._id} className="card .d-flex" style={{ border:"none",fontFamily: 'Barlow Semi Condensed',width:'30vh'}}>
                                 <Link to={{
                                     pathname: `/show/${product._id}`,
                                     aboutProps: {
                                         ...product
                                     }
                                 }}>
-                                    <img src={product.image} className="card-img-top" alt="..." />
+                                    <img  src={product.image} className="card-img-top" alt="..." />
                                 </Link>
                                 <div className="card-body">
+                                    <div style={{display:"flex", justifyContent:"space-between"}}>
                                     <span style={{marginRight: "8vh", fontSize: "3.5vh"}} className="card-title">{product.name}</span><span style={{fontSize:"2.5vh"}}
                                      className="card-title">${product.price}</span>
+                                     </div>
                                     <p className="card-text" style={{fontSize:"2vh"}}>{product.description}</p>
                                     <AddToCart product={product} cartSize={cartSize} setCartSize={setCartSize} />
                                     
