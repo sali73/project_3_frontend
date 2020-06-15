@@ -10,6 +10,7 @@ function Register() {
     const [password, setPassword] = useState('');
     const { setUserData } = useContext(UserContext);
     const [isRegistered, setIsRegistered] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     // register
     async function handleRegister(event) {
@@ -36,6 +37,7 @@ function Register() {
             setIsRegistered(true);
         }
         catch (err) {
+            setIsError(true);
             console.log(err)
         }
     }
@@ -52,7 +54,7 @@ function Register() {
                     onChange={event => setUsername(event.target.value)}
                 />
                 <label htmlFor="password">Password:</label>
-                <p style={{color: '#777'}}>
+                <p style={{color: isError ? 'red' : '#777'}}>
                     password must be at least 6 characters and contain at least one uppercase letter, one lowercase letter, one number, and one special character
                 </p>
                 <input
