@@ -14,7 +14,8 @@ function Register() {
 
     // register
     async function handleRegister(event) {
-        event.preventDefault()
+        event.preventDefault();
+        setIsError(false);
         try {
             const user = {
                 username,

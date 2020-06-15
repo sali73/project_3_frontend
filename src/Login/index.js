@@ -10,28 +10,38 @@ function Login() {
     const [password, setPassword] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const { setUserData } = useContext(UserContext);
+    const [isError, setIsError] = useState(false);
 
     // login
     async function handleLogin(event) {
-        event.preventDefault()
-        const user = {
-            username,
-            password,
+        event.preventDefault();
+        setIsError(false);
+        try {
+            const user = {
+                username,
+                password,
+            }
+            const response = await axios.post(
+                'https://seir-reactivity.herokuapp.com/auth/',
+                user
+            )
+            setUserData({
+                token: response.data.token,
+                user: response.data.user,
+            });
+            localStorage.setItem('auth-token', response.data.token);
+            setIsLoggedIn(true);
+        } catch(err) {
+            console.log(err);
+            setIsError(true);
         }
-        const response = await axios.post(
-            'https://seir-reactivity.herokuapp.com/auth/',
-            user
-        )
-        setUserData({
-            token: response.data.token,
-            user: response.data.user,
-        });
-        localStorage.setItem('auth-token', response.data.token);
-        setIsLoggedIn(true);
     }
 
     return (
         <div className="Login" style={{ margin:'50px 500px 200px 60px'}}>
+            {isError ?
+                <p style={{color: 'red'}}>username or password is incorrect</p>
+                : ''}
             <form onSubmit={handleLogin} className="form-group">
                 <label htmlFor="username">Username:</label>
                 <input
